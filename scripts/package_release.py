@@ -84,7 +84,7 @@ def build(output, components=False, platforms=False):
             content = p.read_text()
             if "/Users/" in content and p.name not in {"package_release.py", "test_portal.py"}:
                 raise ValueError(f"Personal absolute path in {rel}")
-    index = ["# File Index / 逐文件索引", "", "路径为发布根目录相对路径。编号模块导航见 modules；不更名原 Python 导入模块。", "", "Paths are relative to the release root. See modules for numbered workflow guides; Python import modules retain their original names.", "", "| 文件 / File | 用途 / Purpose |", "|---|---|"]
+    index = ["# File Index / 逐文件索引", "", "Paths are relative to the release root. See modules for numbered workflow guides; Python import modules retain their original names.", "", "路径为发布根目录相对路径。编号模块导航见 modules；不更名原 Python 导入模块。", "", "| File / 文件 | Purpose / 用途 |", "|---|---|"]
     index += [f"| `{p.relative_to(ROOT).as_posix()}` | {purpose(p)} |" for p in files]
     (ROOT / "FILE_INDEX.md").write_text("\n".join(index) + "\n")
     manifest = {"version": VERSION, "author": "Safety Horizon--Lrj", "license": "MIT", "contains_factory_data": False,

@@ -14,7 +14,9 @@ def main():
         text = page.read_text(encoding='utf-8')
         assert text.count('<a id="zh-cn"></a>') == 1, page
         assert text.count('<a id="en"></a>') == 1, page
-        zh, en = text.split('<a id="en"></a>')
+        assert text.index('<a id="en"></a>') < text.index('<a id="zh-cn"></a>'), page
+        en = text.split('<a id="en"></a>', 1)[1].split('<a id="zh-cn"></a>', 1)[0]
+        zh = text.split('<a id="zh-cn"></a>', 1)[1]
         assert re.search(r'[\u4e00-\u9fff]', zh), page
         assert len(re.findall(r'[A-Za-z]{2,}', en)) >= 20, page
         assert text.count('```') % 2 == 0, page

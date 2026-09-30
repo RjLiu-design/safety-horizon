@@ -1,19 +1,6 @@
 # 06 Reviewed Alerts / 审核后蜂鸣器程序
 
-[中文](#zh-cn) | [English](#en)
-
-<a id="zh-cn"></a>
-
-**唯一输入**：`src/runtime/review-actuator.json`，由人工审核服务生成。**输出**：单次两短一长或静音；不连接机器控制。
-
-电脑程序：`src/computer_buzzer_simulator.py`；串口程序：`src/indicator_bridge.py`、`src/safety_monitor/serial_connection.py`。
-固件：`src/hardware/arduino_status_indicator/arduino_status_indicator.ino`；基础蜂鸣器诊断另见 `arduino_buzzer_basic_test`，它不是审核固件。
-
-默认无声。现场检查后在根目录执行 `horizon.py run --alerts computer` 或 `--alerts uno`；Windows 或 RTSP 输入需加 `--source-config src/runtime/source.private.json`。只有人工有效授权才响，不允许直接接原始 risk_score。未连接板卡不等于模拟板卡测试已通过。
-
-**历史程序注意**：`app.py`、`ezviz_monitor.py`、`fatigue_window_monitor.py` 等研究入口保留用于开发，可能有自己的声音策略；它们不是本次统一审核发布入口，不用于现场直接替代 `horizon.py run`。
-
----
+[English](#en) | [中文](#zh-cn)
 
 <a id="en"></a>
 
@@ -30,3 +17,18 @@ Firmware: `src/hardware/arduino_status_indicator/arduino_status_indicator.ino`. 
 The default is silent. After on-site checks, use your project Python to run `horizon.py run --alerts computer` or `--alerts uno` from the root, with `--source-config src/runtime/source.private.json` for Windows or RTSP input. Only valid human authorization may sound an alert; never wire raw risk_score directly to an actuator. A disconnected board does not mean simulated-board testing passed.
 
 **Legacy entry points:** `app.py`, `ezviz_monitor.py` and `fatigue_window_monitor.py` remain for development and may have their own sound policies. They are not this release's unified reviewed-alert entry and must not replace `horizon.py run` in deployment.
+
+---
+
+<a id="zh-cn"></a>
+
+## 中文
+
+**唯一输入**：`src/runtime/review-actuator.json`，由人工审核服务生成。**输出**：单次两短一长或静音；不连接机器控制。
+
+电脑程序：`src/computer_buzzer_simulator.py`；串口程序：`src/indicator_bridge.py`、`src/safety_monitor/serial_connection.py`。
+固件：`src/hardware/arduino_status_indicator/arduino_status_indicator.ino`；基础蜂鸣器诊断另见 `arduino_buzzer_basic_test`，它不是审核固件。
+
+默认无声。现场检查后在根目录执行 `horizon.py run --alerts computer` 或 `--alerts uno`；Windows 或 RTSP 输入需加 `--source-config src/runtime/source.private.json`。只有人工有效授权才响，不允许直接接原始 risk_score。未连接板卡不等于模拟板卡测试已通过。
+
+**历史程序注意**：`app.py`、`ezviz_monitor.py`、`fatigue_window_monitor.py` 等研究入口保留用于开发，可能有自己的声音策略；它们不是本次统一审核发布入口，不用于现场直接替代 `horizon.py run`。
