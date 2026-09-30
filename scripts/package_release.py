@@ -44,13 +44,14 @@ def allowed(rel):
 
 def purpose(path):
     rel = path.relative_to(ROOT)
+    detail = None
     if path.suffix == ".py":
         try:
             doc = ast.get_docstring(ast.parse(path.read_text()))
         except (SyntaxError, UnicodeError):
             doc = None
         if doc:
-            return doc.splitlines()[0].replace("|", "/")[:160]
+            detail = doc.splitlines()[0].replace("|", "/")[:160]
     categories = [("platforms/macos/", "macOS install/run/test guide / 苹果电脑入口"),
         ("platforms/windows/", "Windows install/run/test guide / Windows 电脑入口"),
         (".github/", "Cross-platform CI / 两平台自动化验证"),
@@ -64,7 +65,12 @@ def purpose(path):
         ("ui/", "Standalone local review interface / 独立本地审核界面"),
         ("modules/", "Numbered module guide / 编号模块说明"),
         ("docs/", "Numbered deployment documentation / 部署文档")]
-    return next((v for k,v in categories if rel.as_posix().startswith(k)), "Release source or metadata / 发布源码与元数据")
+    category = next((v for k,v in categories if rel.as_posix().startswith(k)), "Release source or metadata / 发布源码与元数据")
+    if detail:
+        has_chinese = any('\u4e00' <= c <= '\u9fff' for c in detail)
+        has_english = any('a' <= c.lower() <= 'z' for c in detail)
+        return detail if has_chinese and has_english else detail + ' — ' + category
+    return category
 
 
 def build(output, components=False, platforms=False):
@@ -78,7 +84,7 @@ def build(output, components=False, platforms=False):
             content = p.read_text()
             if "/Users/" in content and p.name not in {"package_release.py", "test_portal.py"}:
                 raise ValueError(f"Personal absolute path in {rel}")
-    index = ["# File Index / 逐文件索引", "", "路径为发布根目录相对路径。编号模块导航见 modules；不更名原 Python 导入模块。", "", "| File | Purpose / 用途 |", "|---|---|"]
+    index = ["# File Index / 逐文件索引", "", "路径为发布根目录相对路径。编号模块导航见 modules；不更名原 Python 导入模块。", "", "Paths are relative to the release root. See modules for numbered workflow guides; Python import modules retain their original names.", "", "| 文件 / File | 用途 / Purpose |", "|---|---|"]
     index += [f"| `{p.relative_to(ROOT).as_posix()}` | {purpose(p)} |" for p in files]
     (ROOT / "FILE_INDEX.md").write_text("\n".join(index) + "\n")
     manifest = {"version": VERSION, "author": "Safety Horizon--Lrj", "license": "MIT", "contains_factory_data": False,

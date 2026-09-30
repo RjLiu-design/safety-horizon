@@ -1,5 +1,5 @@
 {
-  "version": "0.2.0-rc.1",
+  "version": "0.2.0-rc.2",
   "author": "Safety Horizon--Lrj",
   "license": "MIT",
   "contains_factory_data": false,
@@ -27,6 +27,7 @@
     "docs/08_VALIDATION.md",
     "docs/09_GITHUB_RELEASE.md",
     "docs/10_PROJECT_STATEMENT.md",
+    "docs/11_LICENSE_GUIDE.md",
     "horizon.py",
     "modules/01_capture/README.md",
     "modules/02_pose_risk/README.md",
@@ -49,6 +50,7 @@
     "requirements.in",
     "requirements.lock",
     "scripts/build_capture.sh",
+    "scripts/check_docs.py",
     "scripts/package_release.py",
     "scripts/setup_assets.py",
     "scripts/smoke_models.py",

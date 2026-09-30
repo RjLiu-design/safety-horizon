@@ -20,6 +20,8 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
+      - name: Bilingual documentation and links
+        run: python scripts/check_docs.py
       - name: Locked dependencies
         run: python -m pip install --require-hashes -r ${{ matrix.lock }}
       - name: Dependency consistency

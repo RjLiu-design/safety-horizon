@@ -1,5 +1,9 @@
 # 02 Operator Runbook / 操作顺序
 
+[中文](#zh-cn) | [English](#en)
+
+<a id="zh-cn"></a>
+
 1. 确认只运行一个实例；避免旧项目和发布包同时采同一个窗口。
 2. 按 [macOS](../platforms/macos/README.md) 或 [Windows](../platforms/windows/README.md) 完成安装与环境检查。仅 macOS 窗口采集需要编译助手和录屏授权。
 3. 窗口输入先打开萤石直播；RTSP 确認授权地址可用。确认日期时间、机位、目标左侧工位、裁切及遮挡，不把录像回放标为实时。
@@ -24,3 +28,36 @@ Windows 窗口被遮挡/最小化或视频源断开时，采集可能停止并�
 ## Evidence duration / 证据时间
 
 目标前 3 秒 + 后 5 秒不是每次必然完整；启动不足 3 秒、退出或断流可能缺帧。以片段状态、元数据与帧时间为准。不能把补录后的新画面伪装成故障前证据。
+
+---
+
+<a id="en"></a>
+
+## English
+
+### Operating sequence
+
+1. Run only one instance. Do not let the original project and release package capture the same window simultaneously.
+2. Complete [macOS](../platforms/macos/README.md#en) or [Windows](../platforms/windows/README.md#en) installation and environment checks. Only macOS window capture requires helper compilation and screen-recording permission.
+3. Start EZVIZ live playback for window input, or verify an authorized RTSP address. Check date/time, camera position, the left workstation, crop bounds and occlusion. Do not label recorded playback as live.
+4. Start the platform's `02_run` launcher and select an input. Keep the first run silent and do not connect machine-control equipment.
+5. Check fresh video, pose results and pending events in the browser. Low-confidence or stale input requires on-site confirmation.
+6. Select an event → wait for evidence to become READY → replay frame by frame → annotate hands, action and occlusion → select level 1–5 → submit.
+7. After a successful acknowledgement, inspect `src/annotations/_records`. The same storage layer maintains daily exports.
+8. Use missed-event reporting for hazards noticed by a reviewer but not reported by the system, and normal-sample checks for negative examples. Alarm-only samples cannot establish the overall miss rate.
+9. Threshold proposals require human approval, take effect at the next vision-engine startup and require renewed site assessment.
+10. Stop with Ctrl+C in the launch terminal. Closing the browser does not stop capture or sound services.
+
+An occluded/minimized Windows window or disconnected source may stop capture and the session. Restore the source and restart `02_run`; do not treat an old preview as live.
+
+### Annotation meanings
+
+- Hand zones: SAFE, CAUTION, DANGER or NOT_VISIBLE.
+- Actions: NORMAL_PICK, WASTE_CLEANUP, VIOLATION, STYLE_CHANGE or OTHER.
+- “Annotate current frame” updates the interface draft only. Records are persisted only after submission and successful service acknowledgement.
+- A human rating of 3–5 is one alert-authorization condition, not a label that an injury has occurred.
+- Do not enter worker names, identity numbers or unrelated personal information.
+
+### Evidence duration
+
+The target is 3 seconds before and 5 seconds after an event, not a guarantee for every clip. Startup, shutdown and stream loss may leave missing frames. Use actual clip status, metadata and timestamps; never present footage recorded later as pre-fault evidence.

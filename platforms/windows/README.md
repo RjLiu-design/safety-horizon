@@ -1,4 +1,8 @@
-# Windows（电脑）
+# Windows（电脑） / Windows PCs
+
+[中文](#zh-cn) | [English](#en)
+
+<a id="zh-cn"></a>
 
 适用：Windows 10/11 **x64**，Python 3.12；不要求 TouchDesigner。
 
@@ -33,3 +37,45 @@ py -3.12 -m venv .venv
 运行检查：`platforms\windows\03_test.cmd`。默认无声音；实际输出要显式启用并经人工审核。Windows 原生节点版 TouchDesigner 启动/保存适配不在本版范围，请使用独立浏览器入口。
 
 若脚本被系统或公司策略阻止，核对发布包校验值并按组织流程授权，不关闭安全软件或全局放开脚本执行策略。
+
+---
+
+<a id="en"></a>
+
+## English
+
+### Windows (PCs)
+
+Target: **Windows 10/11 x64**, Python 3.12. TouchDesigner is not required.
+
+1. Extract the whole Windows package, for example to `C:\SafetyHorizon`; do not copy only this subfolder.
+2. Open PowerShell at the extracted root and run `powershell -NoProfile -ExecutionPolicy RemoteSigned -File platforms\windows\01_install.ps1`. Follow the prompts to install project-local Python, dependencies and models without replacing system Python.
+3. Double-click `platforms\windows\02_run.cmd` and select an input:
+
+| Choice | Instructions |
+|---|---|
+| 1 EZVIZ PC window | Play the live stream, select the window number and enter video bounds `x0,y0,x1,y1` normalized to the window client area (0–1). For the left half, use `0,0,0.5,1`. Exclude controls and advertisements |
+| 2 RTSP | Enter your authorized camera URL; input is hidden. An open EZVIZ window is not required |
+| 3 Local video | Put footage in `src\test_videos` and enter a path such as `src/test_videos/sample.mp4`. Tests always remain silent |
+| 4 Review interface | View the interface without video; no detections are fabricated |
+
+4. The browser opens automatically. Press `Ctrl+C` in the launch terminal to stop; closing the browser alone does not stop the backend.
+
+Window capture requires a visible, unobstructed, non-minimized video area. Occlusion yields no fresh frame; the system does not fall back to capturing the entire desktop. Dual monitors, DPI scaling and specific EZVIZ client versions still need target-PC checks. RTSP requires support and authorization on the device; not every model supports it.
+
+Source loss may stop the session. Restore playback, remove obstructions and restart `02_run.cmd`.
+
+Private addresses are stored in `src/runtime/source.private.json`; do not share or upload this directory. Recalibrate workstation regions in `src/config` when changing sources or camera positions.
+
+If Python 3.12 is already installed, run from the project root:
+
+```powershell
+py -3.12 -m venv .venv
+.venv\Scripts\python.exe -m pip install --require-hashes -r requirements-windows.lock
+.venv\Scripts\python.exe scripts/setup_assets.py --download-models
+.venv\Scripts\python.exe horizon.py configure
+```
+
+Run checks with `platforms\windows\03_test.cmd`. Sound is off by default; actual outputs need explicit enabling and human review. Native Windows TD launch/save integration is outside this release; use the standalone browser entry.
+
+If system or organizational policy blocks a script, verify the package checksums and follow the approved authorization process. Do not disable security software or globally relax execution policies.

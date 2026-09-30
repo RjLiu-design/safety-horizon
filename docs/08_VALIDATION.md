@@ -1,10 +1,16 @@
 # 08 Validation / 双平台验证记录
 
-2026-09-22 · v0.2.0-rc.1 · Python 3.12 · Pre-release
+[中文](#zh-cn) | [English](#en)
+
+<a id="zh-cn"></a>
+
+基线：2026-09-22 · v0.2.0-rc.1 · Python 3.12 · Pre-release。
+
+rc.2 仅更新双语文档，不修改监测逻辑；新 CI 记录见 Actions，下表保留所引用的基线实测结果。
 
 ## Automated verification / 已通过的软件检查
 
-[可核对的双平台运行记录](https://github.com/lrj2004424-star/safety-horizon/actions/runs/35723516394)。最终发布提交也由同一 Actions 工作流检查，见仓库 Actions。
+[可核对的双平台运行记录](https://github.com/RjLiu-design/safety-horizon/actions/runs/35723516394)。最终发布提交也由同一 Actions 工作流检查，见仓库 Actions。
 
 | 检查 | macOS | Windows |
 |---|---|---|
@@ -33,3 +39,43 @@
 ## Author field report / 作者现场报告
 
 Safety Horizon--Lrj 确认已完成其原现场及真实硬件验收，报告准确率 **91%–100%**。该结论归属于作者，不与上述自动化测试混算，也不自动延伸为新 Windows 适配或所有部署场景的性能保证。目标现场核验见 [07_FACTORY_ACCEPTANCE](07_FACTORY_ACCEPTANCE.md)。
+
+---
+
+<a id="en"></a>
+
+## English
+
+### Verification record
+
+Baseline: **2026-09-22 · v0.2.0-rc.1 · Python 3.12 · Pre-release**. The rc.2 bilingual update does not alter monitoring logic. New CI runs remain visible in Actions; the table below records the identified baseline run.
+
+[Auditable dual-platform run](https://github.com/RjLiu-design/safety-horizon/actions/runs/35723516394). The final release commit is also checked by the same repository Actions workflow.
+
+| Check | macOS | Windows |
+|---|---|---|
+| Environment | macOS 14 ARM64 hosted runner | Windows Server 2025 x64 hosted runner |
+| Hash-locked install and pip check | Pass | Pass |
+| 132 core tests | 132 passed | 131 passed; 1 macOS helper test skipped |
+| 16 release/interface/platform tests | 15 passed; 1 Windows Job test skipped | 16 passed |
+| Three real model downloads, hashes and blank-image inference | Pass | Pass |
+| Synthetic video → real pose model → TEST dashboard | Pass | Pass |
+| File-by-file verification of both ZIPs | Pass | Pass |
+| Full regression from the current-platform extracted ZIP | Pass; same counts/skips as above | Pass; same counts/skips as above |
+| Windows installer and new .venv regression | Not applicable | Pass, with uv already provided by the runner |
+
+Platform coverage includes file-lock exclusion, source validation, crop boundaries, RTSP timeout settings, review-service startup/shutdown and forced cleanup of owned Windows processes. Interface tests cover authorization, persistence acknowledgements, duplicate-submit protection, test silence and video decoding. Business assertions were not weakened to hide platform failures.
+
+A separate CPython 3.12.13 environment on the local Mac also tested an extracted package without reusing the original TD environment. Restricted sandboxes can block HTTP ports; interface tests require permission to bind localhost.
+
+### Scope
+
+- Windows 10/11 x64 is the target platform. Tests on a Windows Server runner do not establish field acceptance for every client version and camera.
+- Real model inference was executed, but synthetic footage is not footage of workers or accidents. Test pass rates are not detection accuracy.
+- Not independently executed: real Windows EZVIZ client capture, physical RTSP cameras, dual-monitor/DPI combinations, real UNO hot-plug and sound, full factory shifts, or the entire setup on a machine with no tools installed.
+- macOS native helpers compiled successfully in the previous local verification. The original formal TD project is unchanged. Windows TD projects are outside this release's supported path.
+- Packages contain allowlisted source, documentation and generated diagnostic sounds—not site recordings, review data, accounts, models or old environments.
+
+### Author field report
+
+Safety Horizon--Lrj reports completing acceptance at the original site with physical hardware, with **91%–100% accuracy**. This is attributed to the author, not combined with automated-test results or extended to the Windows port or every deployment. See [target-site acceptance](07_FACTORY_ACCEPTANCE.md#en).

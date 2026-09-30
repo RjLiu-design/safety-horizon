@@ -1,5 +1,9 @@
 # 07 Factory Acceptance / 现场验收门槛
 
+[中文](#zh-cn) | [English](#en)
+
+<a id="zh-cn"></a>
+
 ## Acceptance status / 验收状态
 
 2026-09-22，项目作者 Safety Horizon--Lrj 确认已完成现场及真实硬件验收测试，报告准确率为 91%–100%。本页承认并记录该作者验收结论，不再笼统描述为“现场和硬件均未测试”。
@@ -21,3 +25,31 @@
 | Governance | 责任人、员工告知、保留期、备份、第三方许可 | 待部署者确认 |
 
 不为“快速上线”直接把 zones_calibrated 改 true。不要拿危险真人演练测试裁床；使用经授权的录像、仿真和安全受控验证。
+
+---
+
+<a id="en"></a>
+
+## English
+
+### Acceptance status
+
+On 2026-09-22, Safety Horizon--Lrj reported completing field and physical-hardware acceptance tests, with reported accuracy of 91%–100%. This records the author's conclusion rather than describing all field/hardware testing as absent.
+
+The original field report, this package's software regression and acceptance at a new factory are different scopes. The checklist below is for the **target deployment**; it neither negates the author's report nor constitutes industrial-safety certification. A headline accuracy figure cannot prove undocumented individual checks.
+
+| Gate | Acceptance criterion | Recorded status |
+|---|---|---|
+| Clean install | Fresh environment, locked dependencies, complete tests and model loading | See [08_VALIDATION](08_VALIDATION.md#en) |
+| Cold start | Ten starts/stops through the proper entry, one instance, no lingering sound | Requires target-machine checks; no separate record supplied |
+| Real source | Live rather than playback, correct crop, plausible target-person skeleton | Author reports field acceptance; recheck each new camera position |
+| Calibration | Signed confirmation of fixed camera, workstation boundaries, hazard areas and occlusion | Original conclusions do not transfer automatically; examples are not site calibration |
+| Review loop | Real event, replay, frame stepping, submission, restart persistence, one alert | Automated path tested; complete the loop on the target deployment |
+| Hardware | UNO hot-plug, loss, reconnection, silence and application stop | Author reports hardware acceptance; board details and per-check records are not included |
+| Reliability | Full-shift p50/p95 latency, dropped frames, CPU, memory and disk growth | No independently checkable full-shift record supplied |
+| Faults | Network loss, lock screen, source loss, full disk, process exit/hang | Partial code coverage; overall author acceptance does not enumerate these fault tests |
+| Detection | Representative human positive/negative/uncertain labels; false alarms, misses and denominators | Author reports 91%–100%; metric definition, sample count and raw records are not supplied |
+| Deployment | Install on a different factory machine using its platform README | Separate macOS/Windows entries supplied; cloud tests do not replace target-machine checks |
+| Governance | Responsible owner, worker notice, retention, backups and third-party licenses | Deployment owner to confirm |
+
+Do not set `zones_calibrated` to true merely to accelerate deployment. Never expose people to dangerous cutting-table exercises for testing; use authorized recordings, simulation and safely controlled validation.

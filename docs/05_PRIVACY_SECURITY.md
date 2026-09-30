@@ -1,5 +1,9 @@
 # 05 Privacy & Security / 隐私与安全
 
+[中文](#zh-cn) | [English](#en)
+
+<a id="zh-cn"></a>
+
 - 公开包仅含白名单代码、示例配置、文档和 UI。工厂录像、截图、审核记录、缓存、账号、模型二进制和本机 `.venv` 不进入 Release。
 - 现场证据中的模糊处理不能保证完全匿名，仍按敏感资料管理；部署者负责员工告知、访问权限、留存和备份安排。
 - 本地浏览器绑定 127.0.0.1；随机访问标记只在本机会话使用。不要映射公网端口、反向代理或分享地址；当前没有多人账号系统。
@@ -7,3 +11,19 @@
 - 未确认采集画面不应显示“安全”；不通过降低置信门槛来消除黑屏或增加骨架。
 - 更新依赖时重新生成哈希锁并跑测试，不盲目追最新版本。发现安全问题后停止现场使用，保留脱敏日志，联系仓库维护者，不公开患者/员工画面。
 - MIT 许可不是工业安全担保。本系统不控制机器继电器、冲头或联锁。
+
+---
+
+<a id="en"></a>
+
+## English
+
+### Privacy and security rules
+
+- Public packages contain only allowlisted code, example configuration, documentation and UI assets. Site footage, screenshots, review records, caches, accounts, model binaries and local `.venv` directories are excluded.
+- Blurring does not guarantee anonymity. Treat evidence as sensitive; deployment owners must arrange worker notice, access control, retention and backups.
+- The browser server binds to 127.0.0.1. Its random access token is for the local session only. Do not expose it through public ports, reverse proxies or shared URLs. There is no multi-user account system.
+- The HTTP interface does not accept arbitrary filesystem paths or shell commands. Video frames must come from clips under annotations that are referenced by queue records. Alert outputs are off by default.
+- Unverified input must not be shown as safe. Do not lower confidence requirements simply to remove black screens or display more skeletons.
+- Regenerate hash locks and rerun tests when changing dependencies; do not blindly upgrade. If a security issue is found, stop site use, preserve sanitized logs and contact the maintainer. Do not publish sensitive footage of people.
+- MIT licensing is not an industrial-safety warranty. The system does not control machine relays, punches or interlocks.
