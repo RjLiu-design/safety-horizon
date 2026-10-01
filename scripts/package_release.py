@@ -9,7 +9,7 @@ import zipfile
 ROOT = Path(__file__).resolve().parents[1]
 VERSION = (ROOT / "VERSION").read_text().strip()
 GENERATED = {"FILE_INDEX.md", "SHA256SUMS", "BUILD_MANIFEST.json"}
-TOP_FILES = {"README.md", "LICENSE", "VERSION", "RELEASE_NOTES.md", "THIRD_PARTY_NOTICES.md",
+TOP_FILES = {"README.md", "LICENSE", "COMMERCIAL_LICENSE.md", "VERSION", "RELEASE_NOTES.md", "THIRD_PARTY_NOTICES.md",
     "requirements.in", "requirements.lock", "requirements-windows.lock", ".gitignore", ".python-version", "horizon.py", "web_portal.py",
     "01_install_macos.command", "02_run_standalone.command", "03_test.command", "SOURCE_PROVENANCE.json"}
 
@@ -44,6 +44,12 @@ def allowed(rel):
 
 def purpose(path):
     rel = path.relative_to(ROOT)
+    license_purposes = {
+        "LICENSE": "v0.3.0+ non-commercial terms; historical MIT rights preserved / v0.3.0 起的非商业条款，保留历史 MIT 权利",
+        "COMMERCIAL_LICENSE.md": "Commercial licensing process and agreement outline / 商业授权流程与协议条款骨架",
+    }
+    if rel.as_posix() in license_purposes:
+        return license_purposes[rel.as_posix()]
     detail = None
     if path.suffix == ".py":
         try:
@@ -87,7 +93,11 @@ def build(output, components=False, platforms=False):
     index = ["# File Index / 逐文件索引", "", "Paths are relative to the release root. See modules for numbered workflow guides; Python import modules retain their original names.", "", "路径为发布根目录相对路径。编号模块导航见 modules；不更名原 Python 导入模块。", "", "| File / 文件 | Purpose / 用途 |", "|---|---|"]
     index += [f"| `{p.relative_to(ROOT).as_posix()}` | {purpose(p)} |" for p in files]
     (ROOT / "FILE_INDEX.md").write_text("\n".join(index) + "\n")
-    manifest = {"version": VERSION, "author": "Safety Horizon--Lrj", "license": "MIT", "contains_factory_data": False,
+    manifest = {"version": VERSION, "author": "Safety Horizon--Lrj",
+                "license": "LicenseRef-Safety-Horizon-NonCommercial OR LicenseRef-Safety-Horizon-Commercial",
+                "license_files": ["LICENSE", "COMMERCIAL_LICENSE.md"],
+                "historical_license": "Existing MIT rights in v0.2.0-rc.2 and earlier material remain unchanged.",
+                "commercial_license_requires_signed_agreement": True, "contains_factory_data": False,
                 "policy": "explicit allowlist; models/environments/runtime/annotations excluded", "files": [p.relative_to(ROOT).as_posix() for p in files]}
     (ROOT / "BUILD_MANIFEST.json").write_text(json.dumps(manifest, ensure_ascii=False, indent=2) + "\n")
     files += [ROOT / "FILE_INDEX.md", ROOT / "BUILD_MANIFEST.json"]

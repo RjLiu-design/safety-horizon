@@ -1,21 +1,109 @@
-MIT License
-
+Safety Horizon Non-Commercial License / 安全视界非商业用途许可协议
+Dual licensing from v0.3.0 / 自 v0.3.0 起采用双许可
 Copyright (c) 2026 Safety Horizon--Lrj
 
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
+ENGLISH
 
-The above copyright notice and this permission notice shall be included in all
-copies or substantial portions of the Software.
+1. Scope and historical rights
 
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-SOFTWARE.
+Starting with v0.3.0, this Non-Commercial License or a separate signed commercial
+agreement applies to project software and documentation that the author has
+the right to license on these terms (the "Covered Material").
+
+Published tags v0.2.0-rc.2 and earlier retain their original MIT License,
+unchanged. Rights already granted under MIT, including commercial rights, are
+not revoked or restricted, even for MIT material included in later versions.
+Third-party components retain their respective licenses.
+
+This is a non-commercial source-available license, not an OSI-approved
+open-source license.
+
+2. Non-commercial permission
+
+Subject to these terms, permission is granted free of charge to use, copy,
+modify and distribute the Covered Material solely for non-commercial purposes,
+including learning, research, teaching demonstrations and personal projects
+that do not serve commercial purposes.
+
+Non-commercial means not directed toward direct or indirect commercial
+advantage or monetary compensation. User identity or the absence of a sale
+alone does not make a use non-commercial.
+
+Retain this license, copyright notice and safety disclaimer in copies and
+distributions. Identify modified copies as modified. Recipients receive rights
+to the Covered Material under these same terms; modification or distribution
+does not grant commercial rights. Ownership remains with the respective rights
+holders; no ownership transfer or trademark permission is granted.
+
+3. Commercial use requires a separate agreement
+
+All commercial use of the Covered Material is prohibited under this license,
+including selling software or copies; use in for-profit projects or services;
+internal enterprise production or operations; and deployment, integration or
+operation for commercial customers, even without a separate software charge.
+
+Before such use, contact the author at __CONTACT_EMAIL__ and obtain a signed
+commercial license covering that use. An inquiry or download is not commercial
+authorization. See COMMERCIAL_LICENSE.md. The historical MIT rights preserved
+in Section 1 are not subject to this additional agreement requirement.
+
+4. Disclaimer and safety limitations
+
+TO THE MAXIMUM EXTENT PERMITTED BY APPLICABLE LAW, THE COVERED MATERIAL IS
+PROVIDED "AS IS", WITHOUT EXPRESS OR IMPLIED WARRANTIES, INCLUDING
+MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, NON-INFRINGEMENT, ACCURACY
+OR UNINTERRUPTED OPERATION. THE AUTHORS AND COPYRIGHT HOLDERS ARE NOT LIABLE
+FOR CLAIMS, DAMAGES OR OTHER LIABILITY ARISING FROM USE OR INABILITY TO USE
+IT, WHETHER IN CONTRACT, TORT OR OTHERWISE.
+
+Safety Horizon is an auxiliary monitoring tool. It does not replace machine
+interlocks or physical safety protection. Users remain responsible for site
+risk assessment, lawful deployment and independent safety measures.
+Accident prevention is not guaranteed. Nothing here excludes liability
+that applicable law does not permit to be excluded.
+
+中文
+
+1. 适用范围与历史权利
+
+自 v0.3.0 起，作者有权按本条款授权的项目软件及相关文档（“受许可材料”）
+适用本非商业用途许可，或另行签署的商业协议。
+
+已发布的 v0.2.0-rc.2 及以前标签版本保留原 MIT License，不作改动。已经通过
+MIT 授予的权利（包括商用权利）不撤销、不限制，即使相关 MIT 材料也被包含
+在后续版本中。第三方组件继续适用各自许可。
+
+本协议属于非商业源码开放许可，不是 OSI 认可的开源许可。
+
+2. 非商业用途授权
+
+遵守本协议时，免费允许仅为非商业目的使用、复制、修改及分发受许可材料，
+包括不服务于商业目的的学习、研究、教学展示与个人项目。
+
+“非商业”指不以直接或间接商业利益或金钱报酬为目的。使用者的身份或没有
+出售软件这一事实，本身不代表该用途属于非商业用途。
+
+复制或分发时须保留本协议、版权声明与安全免责声明；修改后的副本须注明
+已经修改。接收者依据相同条款获得受许可材料的使用权；修改或分发不产生
+商业授权。权利仍归各自权利人所有；本协议不转让所有权，也不授予商标使用权。
+
+3. 商业用途须另行签约
+
+本协议禁止对受许可材料进行一切商业使用，包括销售软件或其副本；用于营利性
+项目或服务；企业内部生产运营；为商业客户部署、集成或运行，即使不单独收取
+软件费用也不例外。
+
+进行上述使用前，须通过 __CONTACT_EMAIL__ 联系作者，取得覆盖该用途的
+已签署商业许可。咨询或下载不构成商业授权。申请说明见 COMMERCIAL_LICENSE.md。
+第 1 条保留的历史 MIT 权利不受本项另行签约要求限制。
+
+4. 免责声明与安全边界
+
+在适用法律允许的最大范围内，受许可材料按“现状”提供，不附带明示或默示
+保证，包括适销性、特定用途适用性、不侵权、准确性或持续运行保证。作者与
+版权持有人不对因使用或无法使用本材料产生的索赔、损害或其他责任承担责任，
+无论该责任基于合同、侵权或其他依据。
+
+Safety Horizon 是辅助监测工具，不替代机器联锁与物理安全防护。使用者仍须
+负责现场风险评估、合法部署及独立安全措施。本软件不保证避免事故。
+本条款不排除适用法律规定不得排除的责任。

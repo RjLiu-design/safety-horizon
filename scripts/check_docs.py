@@ -7,6 +7,7 @@ ROOT = Path(__file__).resolve().parents[1]
 
 def main():
     pages = [ROOT/'README.md', ROOT/'RELEASE_NOTES.md', ROOT/'THIRD_PARTY_NOTICES.md',
+             ROOT/'COMMERCIAL_LICENSE.md',
              *sorted((ROOT/'docs').glob('*.md')), *sorted((ROOT/'modules').glob('*/README.md')),
              *sorted((ROOT/'platforms').glob('*/README.md')),
              ROOT/'src/models/README.md', ROOT/'src/test_videos/README.md']

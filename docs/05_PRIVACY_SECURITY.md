@@ -14,7 +14,7 @@
 - The HTTP interface does not accept arbitrary filesystem paths or shell commands. Video frames must come from clips under annotations that are referenced by queue records. Alert outputs are off by default.
 - Unverified input must not be shown as safe. Do not lower confidence requirements simply to remove black screens or display more skeletons.
 - Regenerate hash locks and rerun tests when changing dependencies; do not blindly upgrade. If a security issue is found, stop site use, preserve sanitized logs and contact the maintainer. Do not publish sensitive footage of people.
-- MIT licensing is not an industrial-safety warranty. The system does not control machine relays, punches or interlocks.
+- Neither non-commercial nor commercial licensing constitutes an industrial-safety warranty. The system does not control machine relays, punches or interlocks, and does not replace machine interlocks or physical safety protection.
 
 ---
 
@@ -28,4 +28,4 @@
 - 不从 HTTP 接口接受任意文件路径或执行 shell。视频帧仅能来自队列记录中、annotations 内的片段；发布程序默认不启动报警输出。
 - 未确认采集画面不应显示“安全”；不通过降低置信门槛来消除黑屏或增加骨架。
 - 更新依赖时重新生成哈希锁并跑测试，不盲目追最新版本。发现安全问题后停止现场使用，保留脱敏日志，联系仓库维护者，不公开患者/员工画面。
-- MIT 许可不是工业安全担保。本系统不控制机器继电器、冲头或联锁。
+- 非商业许可与商业许可均不构成工业安全担保。本系统不控制机器继电器、冲头或联锁，也不替代机器联锁与物理安全防护。

@@ -20,7 +20,7 @@ The author reports completing field and physical-hardware acceptance tests with 
 | Author reports 91%–100% accuracy | The author's reported range | Detection of every hazard, zero misses or that every subfunction achieves that range |
 | Software regression passed | Platform-specific code, model and extracted-package checks; see 08_VALIDATION | Accident sample counts or field detection accuracy |
 | Human review | An officer assesses evidence and decides action | Discovery of every event that never reached the queue, or replacement of machine safeguards |
-| MIT license | Permission to use and distribute project code | Industrial-safety certification, third-party licensing or production approval |
+| v0.3.0+ dual licensing | Non-commercial permission or separately signed commercial authorization; historical MIT rights unchanged | Industrial-safety certification, third-party licensing or production approval |
 
 ### Evidence scope
 
@@ -32,7 +32,7 @@ Complete **macOS (Apple Silicon)** and **Windows (x64)** packages provide separa
 
 This is a risk-assistance system, not a replacement for machine interlocks, site procedures, professional safety assessments or worker protection. Author testing is not presented as industrial certification or a promise of unconditional deployment at any site.
 
-Documentation revision: **2026-09-30 · v0.2.0-rc.2 · Safety Horizon--Lrj**.
+Documentation revision: **2026-10-01 · v0.3.0 · Safety Horizon--Lrj**. This revision updates licensing references; the test statements above retain their original evidence scope.
 
 ---
 
@@ -40,7 +40,7 @@ Documentation revision: **2026-09-30 · v0.2.0-rc.2 · Safety Horizon--Lrj**.
 
 ## 中文
 
-Documentation revision / 文档修订：2026-09-30 · v0.2.0-rc.2 · Safety Horizon--Lrj
+Documentation revision / 文档修订：2026-10-01 · v0.3.0 · Safety Horizon--Lrj。本次仅更新授权表述；测试声明保留原有证据范围。
 
 ## Public introduction / 对外项目介绍
 
@@ -57,7 +57,7 @@ Documentation revision / 文档修订：2026-09-30 · v0.2.0-rc.2 · Safety Hori
 | 作者报告准确率 91%–100% | 作者提供的测试区间 | 不等于 100% 检出所有危险、零漏报或各子功能均达到该范围 |
 | 软件回归通过 | 对应平台的代码、模型及解压副本检查，具体结果见 08_VALIDATION | 不是事故样本数量，也不是现场识别准确率 |
 | 人工审核 | 安全员结合事件证据作出判断和处置 | 不能保证发现未进入队列的所有漏报，也不能替代机器防护 |
-| MIT 许可 | 项目代码的使用和分发许可 | 不等于工业安全认证、第三方软件授权或生产准入 |
+| v0.3.0 起双许可 | 非商业许可或另行签署的商业授权；历史 MIT 权利不变 | 不等于工业安全认证、第三方软件授权或生产准入 |
 
 ## Evidence scope / 技术记录范围
 

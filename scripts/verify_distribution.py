@@ -2,6 +2,7 @@
 from pathlib import Path, PurePosixPath
 import argparse
 import hashlib
+import json
 import os
 import subprocess
 import sys
@@ -30,6 +31,17 @@ def verify(archive, target):
         assert hashlib.sha256((root/name).read_bytes()).hexdigest() == digest, name
     actual = {p.relative_to(root).as_posix() for p in root.rglob('*') if p.is_file()}
     assert actual == expected | {'SHA256SUMS'}, 'Incomplete checksum coverage'
+    manifest = json.loads((root/'BUILD_MANIFEST.json').read_text(encoding='utf-8'))
+    assert manifest['version'] == (root/'VERSION').read_text().strip(), 'Version mismatch'
+    assert manifest['license'] == 'LicenseRef-Safety-Horizon-NonCommercial OR LicenseRef-Safety-Horizon-Commercial'
+    assert manifest['commercial_license_requires_signed_agreement'] is True
+    assert set(manifest['license_files']) == {'LICENSE', 'COMMERCIAL_LICENSE.md'}
+    for name in manifest['license_files']:
+        assert name in expected and name in manifest['files'], 'Missing licensed release file: ' + name
+    license_text = ' '.join((root/'LICENSE').read_text(encoding='utf-8').split())
+    assert 'does not replace machine interlocks or physical safety protection' in license_text
+    assert '不替代机器联锁与物理安全防护' in license_text
+    assert 'Rights already granted under MIT' in license_text
     assert (root/'horizon.py').is_file() and (root/'src/safety_monitor/review_store.py').is_file()
     print(f'{archive.name}: {len(expected)} file hashes PASS', flush=True)
     return root

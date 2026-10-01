@@ -1,7 +1,13 @@
 {
-  "version": "0.2.0-rc.2",
+  "version": "0.3.0",
   "author": "Safety Horizon--Lrj",
-  "license": "MIT",
+  "license": "LicenseRef-Safety-Horizon-NonCommercial OR LicenseRef-Safety-Horizon-Commercial",
+  "license_files": [
+    "LICENSE",
+    "COMMERCIAL_LICENSE.md"
+  ],
+  "historical_license": "Existing MIT rights in v0.2.0-rc.2 and earlier material remain unchanged.",
+  "commercial_license_requires_signed_agreement": true,
   "contains_factory_data": false,
   "policy": "explicit allowlist; models/environments/runtime/annotations excluded",
   "files": [
@@ -11,6 +17,7 @@
     "01_install_macos.command",
     "02_run_standalone.command",
     "03_test.command",
+    "COMMERCIAL_LICENSE.md",
     "LICENSE",
     "README.md",
     "RELEASE_NOTES.md",

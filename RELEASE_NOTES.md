@@ -1,4 +1,4 @@
-# Safety Horizon v0.2.0-rc.2 — Bilingual documentation / 中英双语
+# Safety Horizon v0.3.0 — Dual licensing / 双许可更新
 
 [English](#en) | [中文](#zh-cn)
 
@@ -6,74 +6,74 @@
 
 ## English
 
-### Safety Horizon v0.2.0-rc.2 — bilingual documentation
-
-**Two desktop platforms, one visual-risk and human-review workflow.** Safety Horizon--Lrj · MIT · Pre-release.
+**Safety Horizon--Lrj · Non-commercial + commercial licensing · Pre-release**
 
 ### Downloads
 
-- Apple M-series Macs: `SafetyHorizon-v0.2.0-rc.2-macOS-arm64.zip`
-- Windows 10/11 x64: `SafetyHorizon-v0.2.0-rc.2-Windows-x64.zip`
-- `SHA256SUMS`: artifact integrity checks.
+- macOS, Apple Silicon (M-series): `SafetyHorizon-v0.3.0-macOS-arm64.zip`
+- Windows 10/11 x64: `SafetyHorizon-v0.3.0-Windows-x64.zip`
+- `SHA256SUMS`: SHA-256 checksums for both ZIPs.
 
-Read `00_START_HERE.md` first. Each package includes the full shared source and does not require TouchDesigner.
+These are complete **source + guided installation** packages, not self-contained executables. Extract the whole package and read `00_START_HERE.md`. First installation downloads Python 3.12, locked dependencies and models. TouchDesigner is optional.
 
-### Changes in rc.2
+### What changed
 
-- Complete Chinese and English text for the project README, platform instructions, seven workflow guides, deployment documents and third-party notices.
-- Language links at the top of each guide, with matching commands, parameters, testing scope and safety statements.
-- Repository links updated to RjLiu-design/safety-horizon.
-- Both downloadable packages include the bilingual documentation and refreshed file/checksum indexes.
-- Monitoring, review, annotation storage and reviewed-alert logic are unchanged from rc.1; this is a documentation release, not a new algorithm or accuracy claim.
+- English-first bilingual non-commercial license and a separate commercial-licensing guide.
+- Non-commercial learning, research, teaching demonstrations and personal projects are free under LICENSE; commercial use of covered material requires a separate signed agreement.
+- Commercial use includes sales, for-profit projects or services, internal enterprise production/operations and deployment for commercial customers.
+- Version, license notices, packaging allowlist, file index and checksums are synchronized; both ZIPs include `LICENSE` and `COMMERCIAL_LICENSE.md`.
+- Monitoring, review, annotation storage and buzzer behavior are **unchanged**. This is a licensing/release update, not a new algorithm, accuracy claim or safety certification.
 
-The rc.1 features remain: platform-specific install/run/test entries and dependency locks; window, RTSP and local-video input; Windows region capture, locking, process cleanup and sound support; evidence replay, annotations, persistence and human-authorized alerts. Test mode cannot drive real outputs.
+Commercial contact remains the requested placeholder `__CONTACT_EMAIL__`; the author must replace it with a working address. Until then, use [GitHub Issues](https://github.com/RjLiu-design/safety-horizon/issues) to request a contact address without posting private information. Neither an inquiry nor a download grants commercial rights.
 
-### Verification and limits
+### Earlier versions
 
-The [rc.1 baseline](https://github.com/RjLiu-design/safety-horizon/actions/runs/35723516394) passed on macOS ARM64 and Windows x64: 147 tests passed and one other-platform test was skipped on each. It also exercised real-model inference, synthetic-video processing, extracted-package regression and the Windows installer's new environment. Current release checks are available in [Actions](https://github.com/RjLiu-design/safety-horizon/actions).
+The v0.2.0-rc.1 and rc.2 Release pages and their attachments have been withdrawn at the author's request. Historical tags and commits remain. Existing MIT rights, including commercial rights in previously MIT-licensed material carried into later versions, are not revoked by withdrawing downloads or changing the license. Third-party licenses remain applicable.
 
-Software checks do not replace acceptance of physical cameras, specific EZVIZ clients, boards or target sites. Windows window capture needs a visible, unobstructed video region. RTSP needs device support and authorization. New camera positions require calibration. Windows uses the browser interface, not a verified Windows TD project.
+### Verification and safety
 
-The author's original 91%–100% field-accuracy report does not automatically apply to the Windows port. The system does not replace machine interlocks or protective measures.
+The existing macOS/Windows CI checks cover regression tests, dependency consistency, model inference, synthetic video, Windows installation and extracted-package validation. Check the run for this release's commit in [Actions](https://github.com/RjLiu-design/safety-horizon/actions); historical test results are not a substitute for that run.
+
+No runtime behavior or target-site acceptance claim is added by this release. Software is provided **as is**, to the extent allowed by law. This auxiliary monitoring tool **does not replace machine interlocks or physical safety protection**. See [LICENSE](LICENSE), [commercial licensing](COMMERCIAL_LICENSE.md#en) and [validation scope](docs/08_VALIDATION.md#en).
 
 ### Updating
 
-Stop the old instance, keep existing data, extract the new package into a new folder and reinstall. Do not reuse an old `.venv` or overwrite review records. Verify with test footage before connecting live input. Alerts remain off by default.
-
----
+Stop the old instance, keep existing data, extract the new package into a new folder and reinstall. Do not overwrite review records or reuse an old `.venv`. Check the license and test footage before live use. Alerts remain off by default.
 
 <a id="zh-cn"></a>
 
 ## 中文
 
-**两个电脑平台，同一套视觉风险与人工审核工作流。** Safety Horizon--Lrj · MIT · Pre-release。
+**Safety Horizon--Lrj · 非商业许可 + 商业授权 · 预发布**
 
-## 下载
+### 下载
 
-- 苹果 M 系列电脑：`SafetyHorizon-v0.2.0-rc.2-macOS-arm64.zip`
-- Windows 10/11 x64：`SafetyHorizon-v0.2.0-rc.2-Windows-x64.zip`
-- `SHA256SUMS`：附件校验清单。
+- macOS，苹果 M 系列：`SafetyHorizon-v0.3.0-macOS-arm64.zip`
+- Windows 10/11 x64：`SafetyHorizon-v0.3.0-Windows-x64.zip`
+- `SHA256SUMS`：两个 ZIP 的 SHA-256 校验值。
 
-每包先读 `00_START_HERE.md`，均含完整共享源码，不要求安装 TouchDesigner。
+这两份是完整的**源码 + 引导安装包**，不是免环境独立可执行程序。完整解压，先读 `00_START_HERE.md`；首次安装联网下载 Python 3.12、锁定依赖与模型。TouchDesigner 为可选项。
 
-## rc.2 更新
+### 本次变化
 
-- 项目 README、两平台说明、七个工作流、部署文档及第三方说明均提供完整中英文正文。
-- 文档顶部增加语言跳转；命令、参数、测试范围和安全边界保持两种语言一致。
-- 仓库链接更新为 RjLiu-design/safety-horizon。
-- 两个下载包同步双语文档，重新生成文件索引和校验清单。
-- 视觉、审核、标注存储和审核后提醒逻辑与 rc.1 相同；这是文档更新，不是算法更新或新的准确率声明。
+- 英文在前的双语非商业许可，以及独立商业授权申请说明。
+- 依据 LICENSE，非商业学习、研究、教学展示与个人项目可免费使用；受许可材料的商业使用须另行签约。
+- 商业用途包括销售、营利性项目或服务、企业内部生产运营、为商业客户部署。
+- 同步版本号、授权说明、打包白名单、文件索引及校验值；两个 ZIP 均包含 `LICENSE` 与 `COMMERCIAL_LICENSE.md`。
+- 识别、审核、标注存储及蜂鸣器逻辑**不变**。本次是许可与发布更新，不是算法升级、新的准确率声明或安全认证。
 
-rc.1 的功能全部保留：两平台安装/启动/测试入口及依赖锁，窗口/RTSP/本地视频输入，Windows 区域采集、互斥、进程回收和声音支持，视频证据、回放标注、存储及人工授权提醒。测试模式不能驱动真实输出。
+商业联系按要求保留占位符 `__CONTACT_EMAIL__`，作者需替换为有效邮箱。在此之前，可通过 [GitHub Issues](https://github.com/RjLiu-design/safety-horizon/issues) 索取联系地址，请勿公开私人信息。咨询或下载不授予商业权利。
 
-## 验证与限制
+### 历史版本
 
-[rc.1 基线记录](https://github.com/RjLiu-design/safety-horizon/actions/runs/35723516394)：macOS ARM64 与 Windows x64 各 147 项通过、1 项非本平台测试跳过；另包含真实模型推理、合成视频处理、解压回归及 Windows 安装器新环境验证。本次发布检查见 [Actions](https://github.com/RjLiu-design/safety-horizon/actions)。
+按作者要求下架 v0.2.0-rc.1、rc.2 的 Release 页面与附件，保留历史标签和提交。下架下载或修改许可不撤销既有 MIT 权利，包括后续版本沿用的 MIT 材料所具有的商用权利。第三方许可仍然有效。
 
-软件检查不代替实际萤石客户端、摄像头、板卡和目标现场验收。Windows 视频区域需可见、无遮挡；RTSP 需要设备支持和授权。新机位须重新标定。Windows 使用浏览器界面，不提供已验收的 Windows TD 工程。
+### 验证与安全
 
-作者原现场准确率 91%–100% 不自动代表 Windows 适配结果。系统不替代机器联锁和安全防护。
+既有 macOS/Windows CI 覆盖回归测试、依赖一致性、模型推理、合成视频、Windows 安装及解压包检查。请在 [Actions](https://github.com/RjLiu-design/safety-horizon/actions) 查看本版提交对应的结果，历史测试不能代替本次检查。
 
-## 更新方式
+本版不改变运行行为，也不新增目标现场验收声明。软件在法律允许范围内按**现状**提供。本软件是辅助监测工具，**不替代机器联锁与物理安全防护**。详见 [LICENSE](LICENSE)、[商业许可](COMMERCIAL_LICENSE.md#zh-cn)及[验证范围](docs/08_VALIDATION.md#zh-cn)。
 
-停止旧实例，保留旧数据，解压新包到新目录并重新安装。不复用旧 .venv，不覆盖审核记录。先用测试视频核验，再接实时来源。默认静音。
+### 更新方式
+
+停止旧实例并保留数据，解压新包到新目录后重新安装。不覆盖审核记录，不复用旧 `.venv`。接入实时来源前确认许可并使用测试视频验证。默认静音。

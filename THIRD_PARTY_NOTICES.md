@@ -8,7 +8,7 @@
 
 ### Third-party software and models
 
-Project code is MIT-licensed. Dependencies, models, operating-system SDKs and applications retain their own licenses; MIT does not relicense them. Source packages do not bundle existing virtual environments, commercial software or factory data.
+Starting with v0.3.0, project material covered by [LICENSE](LICENSE) uses non-commercial source-available terms, with a separate [commercial licensing route](COMMERCIAL_LICENSE.md#en). Published v0.2.0-rc.2 and earlier tags retain MIT; previously granted MIT rights, including those in material carried into later versions, remain unchanged. Dependencies, models, operating-system SDKs and applications retain their own licenses; neither project licensing route relicenses them. Source packages do not bundle existing virtual environments, commercial software or factory data.
 
 | Component | Use | Official source |
 |---|---|---|
@@ -34,7 +34,7 @@ Models are not bundled. Lite/Hand use version 1; Full uses the original project'
 
 ## 中文
 
-项目自身代码使用 MIT。依赖、模型、操作系统 SDK 和应用仍遵循各自许可证，MIT 不重新授权这些内容。源码包不捆绑原虚拟环境、商业软件或工厂数据。
+自 v0.3.0 起，[LICENSE](LICENSE) 覆盖的项目材料采用非商业源码开放条款，并提供独立的[商业授权途径](COMMERCIAL_LICENSE.md#zh-cn)。已发布的 v0.2.0-rc.2 及以前标签维持 MIT；既有 MIT 权利不变，包括后续版本沿用的 MIT 材料所具有的权利。依赖、模型、操作系统 SDK 和应用仍遵循各自许可证，两种项目授权均不重新授权这些内容。源码包不捆绑原虚拟环境、商业软件或工厂数据。
 
 | Component | 用途 / Use | 官方来源 |
 |---|---|---|
