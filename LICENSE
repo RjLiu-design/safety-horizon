@@ -4,15 +4,13 @@ Copyright (c) 2026 Safety Horizon--Lrj
 
 ENGLISH
 
-1. Scope and historical rights
+1. Scope
 
 Starting with v0.3.0, this Non-Commercial License or a separate signed commercial
 agreement applies to project software and documentation that the author has
 the right to license on these terms (the "Covered Material").
 
-Published tags v0.2.0-rc.2 and earlier retain their original MIT License,
-unchanged. Rights already granted under MIT, including commercial rights, are
-not revoked or restricted, even for MIT material included in later versions.
+This license does not limit rights you hold under another applicable license.
 Third-party components retain their respective licenses.
 
 This is a non-commercial source-available license, not an OSI-approved
@@ -44,8 +42,8 @@ operation for commercial customers, even without a separate software charge.
 
 Before such use, contact the author at __CONTACT_EMAIL__ and obtain a signed
 commercial license covering that use. An inquiry or download is not commercial
-authorization. See COMMERCIAL_LICENSE.md. The historical MIT rights preserved
-in Section 1 are not subject to this additional agreement requirement.
+authorization. See COMMERCIAL_LICENSE.md. This requirement applies to use
+under this license and is subject to the scope in Section 1.
 
 4. Disclaimer and safety limitations
 
@@ -64,14 +62,13 @@ that applicable law does not permit to be excluded.
 
 中文
 
-1. 适用范围与历史权利
+1. 适用范围
 
 自 v0.3.0 起，作者有权按本条款授权的项目软件及相关文档（“受许可材料”）
 适用本非商业用途许可，或另行签署的商业协议。
 
-已发布的 v0.2.0-rc.2 及以前标签版本保留原 MIT License，不作改动。已经通过
-MIT 授予的权利（包括商用权利）不撤销、不限制，即使相关 MIT 材料也被包含
-在后续版本中。第三方组件继续适用各自许可。
+本许可不限制使用者依据其他适用许可已享有的权利。
+第三方组件继续适用各自许可。
 
 本协议属于非商业源码开放许可，不是 OSI 认可的开源许可。
 
@@ -95,7 +92,7 @@ MIT 授予的权利（包括商用权利）不撤销、不限制，即使相关 
 
 进行上述使用前，须通过 __CONTACT_EMAIL__ 联系作者，取得覆盖该用途的
 已签署商业许可。咨询或下载不构成商业授权。申请说明见 COMMERCIAL_LICENSE.md。
-第 1 条保留的历史 MIT 权利不受本项另行签约要求限制。
+本项要求适用于依据本许可进行的使用，并以第 1 条的适用范围为限。
 
 4. 免责声明与安全边界
 

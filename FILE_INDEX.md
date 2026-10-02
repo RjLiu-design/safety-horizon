@@ -13,7 +13,7 @@ Paths are relative to the release root. See modules for numbered workflow guides
 | `02_run_standalone.command` | Release source or metadata / 发布源码与元数据 |
 | `03_test.command` | Release source or metadata / 发布源码与元数据 |
 | `COMMERCIAL_LICENSE.md` | Commercial licensing process and agreement outline / 商业授权流程与协议条款骨架 |
-| `LICENSE` | v0.3.0+ non-commercial terms; historical MIT rights preserved / v0.3.0 起的非商业条款，保留历史 MIT 权利 |
+| `LICENSE` | v0.3.0+ non-commercial terms and safety disclaimer / v0.3.0 起的非商业条款与安全免责声明 |
 | `README.md` | Release source or metadata / 发布源码与元数据 |
 | `RELEASE_NOTES.md` | Release source or metadata / 发布源码与元数据 |
 | `SOURCE_PROVENANCE.json` | Release source or metadata / 发布源码与元数据 |

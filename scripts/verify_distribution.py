@@ -41,7 +41,9 @@ def verify(archive, target):
     license_text = ' '.join((root/'LICENSE').read_text(encoding='utf-8').split())
     assert 'does not replace machine interlocks or physical safety protection' in license_text
     assert '不替代机器联锁与物理安全防护' in license_text
-    assert 'Rights already granted under MIT' in license_text
+    assert 'Starting with v0.3.0' in license_text
+    assert 'This license does not limit rights you hold under another applicable license.' in license_text
+    assert '本许可不限制使用者依据其他适用许可已享有的权利' in license_text
     assert (root/'horizon.py').is_file() and (root/'src/safety_monitor/review_store.py').is_file()
     print(f'{archive.name}: {len(expected)} file hashes PASS', flush=True)
     return root

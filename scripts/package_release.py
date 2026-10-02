@@ -45,7 +45,7 @@ def allowed(rel):
 def purpose(path):
     rel = path.relative_to(ROOT)
     license_purposes = {
-        "LICENSE": "v0.3.0+ non-commercial terms; historical MIT rights preserved / v0.3.0 起的非商业条款，保留历史 MIT 权利",
+        "LICENSE": "v0.3.0+ non-commercial terms and safety disclaimer / v0.3.0 起的非商业条款与安全免责声明",
         "COMMERCIAL_LICENSE.md": "Commercial licensing process and agreement outline / 商业授权流程与协议条款骨架",
     }
     if rel.as_posix() in license_purposes:
@@ -96,7 +96,7 @@ def build(output, components=False, platforms=False):
     manifest = {"version": VERSION, "author": "Safety Horizon--Lrj",
                 "license": "LicenseRef-Safety-Horizon-NonCommercial OR LicenseRef-Safety-Horizon-Commercial",
                 "license_files": ["LICENSE", "COMMERCIAL_LICENSE.md"],
-                "historical_license": "Existing MIT rights in v0.2.0-rc.2 and earlier material remain unchanged.",
+                "license_scope": "v0.3.0 and later; covered material as defined in LICENSE",
                 "commercial_license_requires_signed_agreement": True, "contains_factory_data": False,
                 "policy": "explicit allowlist; models/environments/runtime/annotations excluded", "files": [p.relative_to(ROOT).as_posix() for p in files]}
     (ROOT / "BUILD_MANIFEST.json").write_text(json.dumps(manifest, ensure_ascii=False, indent=2) + "\n")

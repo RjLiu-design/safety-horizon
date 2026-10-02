@@ -1,4 +1,4 @@
-# Safety Horizon v0.3.0 — Dual licensing / 双许可更新
+# Safety Horizon v0.3.0
 
 [English](#en) | [中文](#zh-cn)
 
@@ -6,74 +6,72 @@
 
 ## English
 
-**Safety Horizon--Lrj · Non-commercial + commercial licensing · Pre-release**
+**Safety Horizon--Lrj · Pre-release**
 
 ### Downloads
 
-- macOS, Apple Silicon (M-series): `SafetyHorizon-v0.3.0-macOS-arm64.zip`
-- Windows 10/11 x64: `SafetyHorizon-v0.3.0-Windows-x64.zip`
-- `SHA256SUMS`: SHA-256 checksums for both ZIPs.
+| Platform | Package |
+|---|---|
+| macOS · Apple Silicon (M-series) | `SafetyHorizon-v0.3.0-macOS-arm64.zip` |
+| Windows 10/11 · x64 | `SafetyHorizon-v0.3.0-Windows-x64.zip` |
 
-These are complete **source + guided installation** packages, not self-contained executables. Extract the whole package and read `00_START_HERE.md`. First installation downloads Python 3.12, locked dependencies and models. TouchDesigner is optional.
+Extract the complete package and read `00_START_HERE.md`. These packages include source and installation scripts; the first installation downloads Python 3.12, dependencies and models. TouchDesigner is optional. Use the attached `SHA256SUMS` to verify the downloads.
 
-### What changed
+### Licensing
 
-- English-first bilingual non-commercial license and a separate commercial-licensing guide.
-- Non-commercial learning, research, teaching demonstrations and personal projects are free under LICENSE; commercial use of covered material requires a separate signed agreement.
-- Commercial use includes sales, for-profit projects or services, internal enterprise production/operations and deployment for commercial customers.
-- Version, license notices, packaging allowlist, file index and checksums are synchronized; both ZIPs include `LICENSE` and `COMMERCIAL_LICENSE.md`.
-- Monitoring, review, annotation storage and buzzer behavior are **unchanged**. This is a licensing/release update, not a new algorithm, accuracy claim or safety certification.
+**v0.3.0 and later use dual licensing.** Under [LICENSE](LICENSE), covered material may be used, copied, modified and distributed free of charge for non-commercial learning, research, teaching demonstrations and personal projects.
 
-Commercial contact remains the requested placeholder `__CONTACT_EMAIL__`; the author must replace it with a working address. Until then, use [GitHub Issues](https://github.com/RjLiu-design/safety-horizon/issues) to request a contact address without posting private information. Neither an inquiry nor a download grants commercial rights.
+Commercial use requires a separately signed agreement. This includes sales, for-profit projects or services, internal enterprise production or operations, and deployment for commercial customers. See [Commercial licensing](COMMERCIAL_LICENSE.md#en). Third-party licenses remain applicable.
 
-### Earlier versions
+Commercial contact: `__CONTACT_EMAIL__`. You can also request contact details through [GitHub Issues](https://github.com/RjLiu-design/safety-horizon/issues). Do not post private business information publicly. An inquiry or download does not grant commercial rights.
 
-The v0.2.0-rc.1 and rc.2 Release records and their attachments have been withdrawn at the author's request. Historical tags and commits remain. See [LICENSE](LICENSE) for version-specific terms. Third-party licenses remain applicable.
+### Documentation update · 2026-10-02
+
+The repository documents and platform packages now focus on the terms for v0.3.0 and later. File descriptions and checksums are updated. Monitoring, review, annotation storage and buzzer behavior are unchanged.
 
 ### Verification and safety
 
-The existing macOS/Windows CI checks cover regression tests, dependency consistency, model inference, synthetic video, Windows installation and extracted-package validation. Check the run for this release's commit in [Actions](https://github.com/RjLiu-design/safety-horizon/actions); historical test results are not a substitute for that run.
+The v0.3.0 runtime passed the macOS and Windows CI checks: [run 36826892463](https://github.com/RjLiu-design/safety-horizon/actions/runs/36826892463). Automated tests are not field safety certification. See [Validation](docs/08_VALIDATION.md#en) for coverage and limitations.
 
-No runtime behavior or target-site acceptance claim is added by this release. Software is provided **as is**, to the extent allowed by law. This auxiliary monitoring tool **does not replace machine interlocks or physical safety protection**. See [LICENSE](LICENSE), [commercial licensing](COMMERCIAL_LICENSE.md#en) and [validation scope](docs/08_VALIDATION.md#en).
+Software is provided **as is**, to the extent permitted by law. Safety Horizon is an auxiliary monitoring tool and **does not replace machine interlocks or physical safety protection**.
 
-### Updating
+### Installation
 
-Stop the old instance, keep existing data, extract the new package into a new folder and reinstall. Do not overwrite review records or reuse an old `.venv`. Check the license and test footage before live use. Alerts remain off by default.
+Stop running instances and keep existing data. Extract into a new folder and install using the platform guide. Do not overwrite review records or reuse an existing `.venv`. Test the configured input before live use. Alerts are off by default.
 
 <a id="zh-cn"></a>
 
 ## 中文
 
-**Safety Horizon--Lrj · 非商业许可 + 商业授权 · 预发布**
+**Safety Horizon--Lrj · 预发布**
 
 ### 下载
 
-- macOS，苹果 M 系列：`SafetyHorizon-v0.3.0-macOS-arm64.zip`
-- Windows 10/11 x64：`SafetyHorizon-v0.3.0-Windows-x64.zip`
-- `SHA256SUMS`：两个 ZIP 的 SHA-256 校验值。
+| 系统 | 安装包 |
+|---|---|
+| macOS · 苹果 M 系列 | `SafetyHorizon-v0.3.0-macOS-arm64.zip` |
+| Windows 10/11 · x64 | `SafetyHorizon-v0.3.0-Windows-x64.zip` |
 
-这两份是完整的**源码 + 引导安装包**，不是免环境独立可执行程序。完整解压，先读 `00_START_HERE.md`；首次安装联网下载 Python 3.12、锁定依赖与模型。TouchDesigner 为可选项。
+完整解压后，先读 `00_START_HERE.md`。安装包包含源码和安装脚本，首次安装需要联网下载 Python 3.12、依赖及模型，TouchDesigner 为可选项。附件 `SHA256SUMS` 用于核验下载文件。
 
-### 本次变化
+### 许可
 
-- 英文在前的双语非商业许可，以及独立商业授权申请说明。
-- 依据 LICENSE，非商业学习、研究、教学展示与个人项目可免费使用；受许可材料的商业使用须另行签约。
-- 商业用途包括销售、营利性项目或服务、企业内部生产运营、为商业客户部署。
-- 同步版本号、授权说明、打包白名单、文件索引及校验值；两个 ZIP 均包含 `LICENSE` 与 `COMMERCIAL_LICENSE.md`。
-- 识别、审核、标注存储及蜂鸣器逻辑**不变**。本次是许可与发布更新，不是算法升级、新的准确率声明或安全认证。
+**v0.3.0 及后续版本采用双许可。** 根据 [LICENSE](LICENSE)，受许可材料可免费用于非商业学习、研究、教学展示及个人项目，允许在该范围内使用、复制、修改和分发。
 
-商业联系按要求保留占位符 `__CONTACT_EMAIL__`，作者需替换为有效邮箱。在此之前，可通过 [GitHub Issues](https://github.com/RjLiu-design/safety-horizon/issues) 索取联系地址，请勿公开私人信息。咨询或下载不授予商业权利。
+商业使用须另行签署协议，包括销售、营利性项目或服务、企业内部生产运营，以及为商业客户部署。申请流程见[商业许可说明](COMMERCIAL_LICENSE.md#zh-cn)。第三方许可继续有效。
 
-### 历史版本
+商业联系：`__CONTACT_EMAIL__`。也可通过 [GitHub Issues](https://github.com/RjLiu-design/safety-horizon/issues) 索取联系地址，请勿公开业务隐私。咨询或下载不构成商业授权。
 
-按作者要求下架 v0.2.0-rc.1、rc.2 的 Release 发布记录与附件，保留历史标签和提交。各版本适用条款见 [LICENSE](LICENSE)。第三方许可仍然有效。
+### 文档更新 · 2026-10-02
+
+仓库说明和两平台安装包统一说明 v0.3.0 及后续版本的许可条款，文件说明和校验值同步更新。识别、审核、标注存储及蜂鸣器逻辑不变。
 
 ### 验证与安全
 
-既有 macOS/Windows CI 覆盖回归测试、依赖一致性、模型推理、合成视频、Windows 安装及解压包检查。请在 [Actions](https://github.com/RjLiu-design/safety-horizon/actions) 查看本版提交对应的结果，历史测试不能代替本次检查。
+v0.3.0 运行代码已通过 macOS 和 Windows CI 检查：[测试记录 36826892463](https://github.com/RjLiu-design/safety-horizon/actions/runs/36826892463)。自动化测试不等于现场安全认证，具体范围与限制见[验证记录](docs/08_VALIDATION.md#zh-cn)。
 
-本版不改变运行行为，也不新增目标现场验收声明。软件在法律允许范围内按**现状**提供。本软件是辅助监测工具，**不替代机器联锁与物理安全防护**。详见 [LICENSE](LICENSE)、[商业许可](COMMERCIAL_LICENSE.md#zh-cn)及[验证范围](docs/08_VALIDATION.md#zh-cn)。
+软件在法律允许范围内按**现状**提供。Safety Horizon 是辅助监测工具，**不替代机器联锁与物理安全防护**。
 
-### 更新方式
+### 安装
 
-停止旧实例并保留数据，解压新包到新目录后重新安装。不覆盖审核记录，不复用旧 `.venv`。接入实时来源前确认许可并使用测试视频验证。默认静音。
+停止运行中的实例并保留数据，解压到新目录，按照对应平台说明安装。不覆盖审核记录，不复用已有 `.venv`。接入实时监测前验证输入配置。默认关闭声音提醒。

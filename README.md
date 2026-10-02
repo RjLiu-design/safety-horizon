@@ -12,9 +12,9 @@
 
 Designed by **Safety Horizon--Lrj**, Safety Horizon assists with visual risk monitoring at cutting-table workstations. It combines single-workstation pose analysis, event clips, frame-by-frame annotations, human risk ratings from 1 to 5, review-authorized buzzer alerts and threshold recommendations. Its standalone browser interface **does not require TouchDesigner**.
 
-**v0.3.0 · Dual licensing · Pre-release** — licensing and release-packaging update; monitoring and review logic are unchanged from v0.2.0-rc.2.
+**v0.3.0 · Dual licensing · Pre-release**
 
-**Starting with v0.3.0: dual licensing — non-commercial source-available use + separate commercial authorization.** See [License](#7-author-and-license). The v0.2.0-rc.1 and rc.2 Release records and packaged downloads have been withdrawn; historical tags remain.
+**v0.3.0 and later use dual licensing: free non-commercial use and separately agreed commercial use.** See [Author and license](#7-author-and-license).
 
 ### 1. Choose your platform
 
@@ -119,16 +119,15 @@ See the [optional TD guide](docs/04_TOUCHDESIGNER.md#en). Windows uses the brows
 
 **What must not be uploaded?** `src/runtime`, `src/annotations`, site footage, models, account configuration and `.venv`. Release packaging uses an explicit allowlist.
 
-**How can I use this project commercially?** For material covered by the v0.3.0+ Non-Commercial License, contact the author at `__CONTACT_EMAIL__` and sign a [commercial license agreement](COMMERCIAL_LICENSE.md#en) before commercial use. See [LICENSE](LICENSE) for version-specific terms.
+**How can I use this project commercially?** Contact the author at `__CONTACT_EMAIL__` and sign a [commercial license agreement](COMMERCIAL_LICENSE.md#en) before commercially using material covered by the v0.3.0+ Non-Commercial License. See [LICENSE](LICENSE) for the full terms.
 
 ### 7. Author and license
 
 **Safety Horizon--Lrj** · Copyright © 2026 · [Report an issue](https://github.com/RjLiu-design/safety-horizon/issues).
 
-Safety Horizon uses version-scoped **dual licensing**:
+Safety Horizon **v0.3.0 and later** use dual licensing:
 
-- **Published v0.2.0-rc.2 and earlier tags:** retain their original [MIT License](https://github.com/RjLiu-design/safety-horizon/blob/v0.2.0-rc.2/LICENSE), unchanged.
-- **v0.3.0 and later:** the [Non-Commercial License](LICENSE) permits free copying, modification, distribution and use only for non-commercial purposes, including learning, research, teaching demonstrations and personal projects that do not serve commercial purposes.
+- **Non-commercial use:** the [Non-Commercial License](LICENSE) permits free copying, modification, distribution and use solely for non-commercial purposes, including learning, research, teaching demonstrations and personal projects.
 - **Commercial use:** sales, for-profit projects or services, internal enterprise production or operations, and deployment, integration or operation for commercial customers require a separately signed [commercial license agreement](COMMERCIAL_LICENSE.md#en), including where no separate software fee is charged. Contact: `__CONTACT_EMAIL__`.
 
 Third-party licenses remain applicable. The non-commercial route is **source-available, not OSI-approved open source**; it does not authorize commercial use. The software is provided **as is**, with warranties and liability excluded to the extent permitted by law. It is an auxiliary monitoring tool and **does not replace machine interlocks or physical safety protection**. See [LICENSE](LICENSE) for the full terms.
@@ -145,9 +144,7 @@ Third-party licenses remain applicable. The non-commercial route is **source-ava
 
 **v0.3.0 · 双许可 · Pre-release（预发布）**
 
-本次更新许可与发布打包信息，视觉和审核逻辑与 v0.2.0-rc.2 相同。
-
-**自 v0.3.0 起采用双许可：非商业源码开放 + 独立商业授权。** 详见[作者与许可](#7-作者与许可)。v0.2.0-rc.1、rc.2 的 Release 发布记录与下载附件已下架；保留历史标签。
+**v0.3.0 及后续版本采用双许可：非商业用途免费，商业用途另行签约。** 详见[作者与许可](#7-作者与许可)。
 
 ## 1. 按系统下载 / Choose your platform
 
@@ -252,16 +249,15 @@ macOS 默认窗口输入可省略 source-config。UNO 先烧录 `src/hardware/ar
 
 **什么不能上传？** `src/runtime`、`src/annotations`、现场录像、模型、账号配置和 `.venv`。发布使用白名单打包脚本。
 
-**我想商用这个项目怎么办？** 对 v0.3.0 起受非商业许可约束的材料，请通过 `__CONTACT_EMAIL__` 联系作者，在商业使用前签署[商业许可协议](COMMERCIAL_LICENSE.md#zh-cn)。各版本适用条款见 [LICENSE](LICENSE)。
+**我想商用这个项目怎么办？** 请通过 `__CONTACT_EMAIL__` 联系作者，在商业使用 v0.3.0 起受非商业许可约束的材料前签署[商业许可协议](COMMERCIAL_LICENSE.md#zh-cn)。完整条款见 [LICENSE](LICENSE)。
 
 ## 7. 作者与许可
 
 **Safety Horizon--Lrj** · Copyright © 2026 · [问题反馈](https://github.com/RjLiu-design/safety-horizon/issues)。
 
-Safety Horizon 按版本采用**双许可**：
+Safety Horizon **v0.3.0 及后续版本**采用双许可：
 
-- **已发布的 v0.2.0-rc.2 及以前标签版本：**保留原 [MIT License](https://github.com/RjLiu-design/safety-horizon/blob/v0.2.0-rc.2/LICENSE)，内容不变。
-- **v0.3.0 及后续版本：**[非商业用途许可](LICENSE)免费允许仅为非商业目的复制、修改、分发和使用，包括不服务于商业目的的学习、研究、教学展示与个人项目。
+- **非商业用途：**[非商业用途许可](LICENSE)免费允许仅为非商业目的复制、修改、分发和使用，包括学习、研究、教学展示与个人项目。
 - **商业用途：**销售、营利性项目或服务、企业内部生产运营、为商业客户部署、集成或运行，均须另行签署[商业许可协议](COMMERCIAL_LICENSE.md#zh-cn)，即使不单独收取软件费用也不例外。联系：`__CONTACT_EMAIL__`。
 
 第三方许可继续有效。非商业授权属于**源码开放，不是 OSI 认可的开源许可**，不能授权商业使用。软件按**现状**提供，在法律允许范围内排除保证与责任。本软件是辅助监测工具，**不替代机器联锁与物理安全防护**。完整条款见 [LICENSE](LICENSE)。

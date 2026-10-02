@@ -12,7 +12,7 @@ Copyright © 2026 Safety Horizon--Lrj
 
 Starting with v0.3.0, commercial use of material covered by [LICENSE](LICENSE) requires a separate signed agreement with the author. This includes sales, for-profit projects or services, internal enterprise production or operations, and deployment, integration or operation for commercial customers, even without a separate software charge.
 
-The commercial license and non-commercial source-available license are **two independent authorizations**. Non-commercial permission does not authorize commercial use. Published v0.2.0-rc.2 and earlier tags remain MIT; existing MIT rights, including those in material carried into later versions, are unchanged. Third-party licenses remain applicable.
+The commercial license and non-commercial source-available license are **two independent authorizations**. Non-commercial permission does not authorize commercial use. The scope in [LICENSE](LICENSE) and third-party licenses remain applicable.
 
 ### 2. Application
 
@@ -48,7 +48,7 @@ Unless a signed agreement expressly provides otherwise, the software is provided
 
 自 v0.3.0 起，对 [LICENSE](LICENSE) 覆盖的材料进行商业使用，须与作者另行签署协议。商业使用包括销售、营利性项目或服务、企业内部生产运营、为商业客户部署、集成或运行，即使不单独收取软件费用也不例外。
 
-商业许可与非商业源码开放许可是**两套独立授权**，非商业许可不能授权商业使用。已发布的 v0.2.0-rc.2 及以前标签维持 MIT；既有 MIT 权利不变，包括后续版本沿用的 MIT 材料所具有的权利。第三方许可继续适用。
+商业许可与非商业源码开放许可是**两套独立授权**，非商业许可不能授权商业使用。适用范围以 [LICENSE](LICENSE) 为准，第三方许可继续有效。
 
 ### 2. 申请流程
 

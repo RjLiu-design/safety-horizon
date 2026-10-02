@@ -8,7 +8,7 @@
 
 ### Release sequence
 
-1. Check README, the Safety Horizon--Lrj attribution, LICENSE, COMMERCIAL_LICENSE.md, third-party notices and validation limits for accuracy. For v0.3.0+, distinguish non-commercial permission from separately signed commercial authorization; preserve historical MIT rights.
+1. Check README, the Safety Horizon--Lrj attribution, LICENSE, COMMERCIAL_LICENSE.md, third-party notices and validation limits for accuracy. For v0.3.0+, distinguish non-commercial permission from separately signed commercial authorization.
 2. Run allowlisted packaging and inspect FILE_INDEX, BUILD_MANIFEST and SHA256SUMS.
 3. Commit only release-listed source to the intended repository—not the entire original running project.
 4. Public publishing is authorized for [RjLiu-design/safety-horizon](https://github.com/RjLiu-design/safety-horizon). Never upload site data.
@@ -24,7 +24,7 @@ Retain prior releases/history by default. Remove old assets only with explicit a
 
 ## 中文
 
-1. 检查 README、作者 Safety Horizon--Lrj、LICENSE、COMMERCIAL_LICENSE.md、第三方说明和 08_VALIDATION 的限制是否真实。v0.3.0 起须区分非商业许可与另行签署的商业授权，并保留历史 MIT 权利。
+1. 检查 README、作者 Safety Horizon--Lrj、LICENSE、COMMERCIAL_LICENSE.md、第三方说明和 08_VALIDATION 的限制是否真实。v0.3.0 起须区分非商业许可与另行签署的商业授权。
 2. 执行白名单打包脚本；审阅 FILE_INDEX、BUILD_MANIFEST 和 SHA256SUMS。
 3. 在指定 GitHub 仓库初始化/提交，仅提交源码清单内文件。不要上传整个原运行工程。
 4. 所有者已确认公开发布。仓库：[RjLiu-design/safety-horizon](https://github.com/RjLiu-design/safety-horizon)。仅上传发布清单中的内容，不上传现场数据。

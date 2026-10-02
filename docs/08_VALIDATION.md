@@ -8,9 +8,9 @@
 
 ### Verification record
 
-Baseline: **2026-09-22 · v0.2.0-rc.1 · Python 3.12 · Pre-release**. The rc.2 bilingual update does not alter monitoring logic. New CI runs remain visible in Actions; the table below records the identified baseline run.
+CI record: **2026-10-01 · v0.3.0 · Python 3.12 · Pre-release**, tested commit [`b95271b`](https://github.com/RjLiu-design/safety-horizon/commit/b95271b499c574048f9e41c23624e068cb99aeb5). Both macOS and Windows jobs passed. The table below records that run's software checks; this documentation revision does not change runtime code or establish new field or physical-hardware acceptance.
 
-[Auditable dual-platform run](https://github.com/RjLiu-design/safety-horizon/actions/runs/35723516394). The final release commit is also checked by the same repository Actions workflow.
+[Auditable v0.3.0 dual-platform run](https://github.com/RjLiu-design/safety-horizon/actions/runs/36826892463). For later documentation revisions, check the corresponding commit's run in repository Actions; do not treat this record as evidence for an unexecuted run.
 
 | Check | macOS | Windows |
 |---|---|---|
@@ -46,13 +46,13 @@ Safety Horizon--Lrj reports completing acceptance at the original site with phys
 
 ## 中文
 
-基线：2026-09-22 · v0.2.0-rc.1 · Python 3.12 · Pre-release。
+CI 记录：**2026-10-01 · v0.3.0 · Python 3.12 · Pre-release**，已测试提交 [`b95271b`](https://github.com/RjLiu-design/safety-horizon/commit/b95271b499c574048f9e41c23624e068cb99aeb5)。macOS 与 Windows 两个平台任务均通过。
 
-rc.2 仅更新双语文档，不修改监测逻辑；新 CI 记录见 Actions，下表保留所引用的基线实测结果。
+下表记录该次软件检查结果；本次文档修订不修改运行代码，也不构成新的现场或真实硬件验收。
 
 ## Automated verification / 已通过的软件检查
 
-[可核对的双平台运行记录](https://github.com/RjLiu-design/safety-horizon/actions/runs/35723516394)。最终发布提交也由同一 Actions 工作流检查，见仓库 Actions。
+[可核对的 v0.3.0 双平台运行记录](https://github.com/RjLiu-design/safety-horizon/actions/runs/36826892463)。后续文档修订请在仓库 Actions 核对对应提交的运行记录，不将本记录当作尚未执行的检查结果。
 
 | 检查 | macOS | Windows |
 |---|---|---|

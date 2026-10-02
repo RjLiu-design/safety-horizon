@@ -6,7 +6,7 @@
     "LICENSE",
     "COMMERCIAL_LICENSE.md"
   ],
-  "historical_license": "Existing MIT rights in v0.2.0-rc.2 and earlier material remain unchanged.",
+  "license_scope": "v0.3.0 and later; covered material as defined in LICENSE",
   "commercial_license_requires_signed_agreement": true,
   "contains_factory_data": false,
   "policy": "explicit allowlist; models/environments/runtime/annotations excluded",
