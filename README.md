@@ -14,7 +14,7 @@ Designed by **Safety Horizon--Lrj**, Safety Horizon assists with visual risk mon
 
 **v0.3.0 · Dual licensing · Pre-release** — licensing and release-packaging update; monitoring and review logic are unchanged from v0.2.0-rc.2.
 
-**Starting with v0.3.0: dual licensing — non-commercial source-available use + separate commercial authorization.** See [License](#7-author-and-license). The v0.2.0-rc.1 and rc.2 Release pages and packaged downloads have been withdrawn; historical tags and existing MIT rights are unchanged.
+**Starting with v0.3.0: dual licensing — non-commercial source-available use + separate commercial authorization.** See [License](#7-author-and-license). The v0.2.0-rc.1 and rc.2 Release records and packaged downloads have been withdrawn; historical tags remain.
 
 ### 1. Choose your platform
 
@@ -119,7 +119,7 @@ See the [optional TD guide](docs/04_TOUCHDESIGNER.md#en). Windows uses the brows
 
 **What must not be uploaded?** `src/runtime`, `src/annotations`, site footage, models, account configuration and `.venv`. Release packaging uses an explicit allowlist.
 
-**How can I use this project commercially?** For material covered by the v0.3.0+ Non-Commercial License, contact the author at `__CONTACT_EMAIL__` and sign a [commercial license agreement](COMMERCIAL_LICENSE.md#en) before commercial use. Previously granted MIT rights remain unchanged; historical MIT versions do not require this additional agreement.
+**How can I use this project commercially?** For material covered by the v0.3.0+ Non-Commercial License, contact the author at `__CONTACT_EMAIL__` and sign a [commercial license agreement](COMMERCIAL_LICENSE.md#en) before commercial use. See [LICENSE](LICENSE) for version-specific terms.
 
 ### 7. Author and license
 
@@ -131,9 +131,7 @@ Safety Horizon uses version-scoped **dual licensing**:
 - **v0.3.0 and later:** the [Non-Commercial License](LICENSE) permits free copying, modification, distribution and use only for non-commercial purposes, including learning, research, teaching demonstrations and personal projects that do not serve commercial purposes.
 - **Commercial use:** sales, for-profit projects or services, internal enterprise production or operations, and deployment, integration or operation for commercial customers require a separately signed [commercial license agreement](COMMERCIAL_LICENSE.md#en), including where no separate software fee is charged. Contact: `__CONTACT_EMAIL__`.
 
-Rights already granted under MIT, including commercial rights in material carried into later versions, are not revoked or restricted. Third-party licenses remain applicable. The non-commercial route is **source-available, not OSI-approved open source**; it does not authorize commercial use. The software is provided **as is**, with warranties and liability excluded to the extent permitted by law. It is an auxiliary monitoring tool and **does not replace machine interlocks or physical safety protection**. See [LICENSE](LICENSE) for the full terms.
-
-Historical MIT references do not grant MIT rights to new material covered by the v0.3.0+ license. Withdrawing older downloads does not revoke previously granted rights.
+Third-party licenses remain applicable. The non-commercial route is **source-available, not OSI-approved open source**; it does not authorize commercial use. The software is provided **as is**, with warranties and liability excluded to the extent permitted by law. It is an auxiliary monitoring tool and **does not replace machine interlocks or physical safety protection**. See [LICENSE](LICENSE) for the full terms.
 
 ---
 
@@ -149,7 +147,7 @@ Historical MIT references do not grant MIT rights to new material covered by the
 
 本次更新许可与发布打包信息，视觉和审核逻辑与 v0.2.0-rc.2 相同。
 
-**自 v0.3.0 起采用双许可：非商业源码开放 + 独立商业授权。** 详见[作者与许可](#7-作者与许可)。v0.2.0-rc.1、rc.2 的 Release 页面与下载附件已下架；历史标签与既有 MIT 权利不变。
+**自 v0.3.0 起采用双许可：非商业源码开放 + 独立商业授权。** 详见[作者与许可](#7-作者与许可)。v0.2.0-rc.1、rc.2 的 Release 发布记录与下载附件已下架；保留历史标签。
 
 ## 1. 按系统下载 / Choose your platform
 
@@ -254,7 +252,7 @@ macOS 默认窗口输入可省略 source-config。UNO 先烧录 `src/hardware/ar
 
 **什么不能上传？** `src/runtime`、`src/annotations`、现场录像、模型、账号配置和 `.venv`。发布使用白名单打包脚本。
 
-**我想商用这个项目怎么办？** 对 v0.3.0 起受非商业许可约束的材料，请通过 `__CONTACT_EMAIL__` 联系作者，在商业使用前签署[商业许可协议](COMMERCIAL_LICENSE.md#zh-cn)。既有 MIT 权利不变；历史 MIT 版本不要求另行签署该协议。
+**我想商用这个项目怎么办？** 对 v0.3.0 起受非商业许可约束的材料，请通过 `__CONTACT_EMAIL__` 联系作者，在商业使用前签署[商业许可协议](COMMERCIAL_LICENSE.md#zh-cn)。各版本适用条款见 [LICENSE](LICENSE)。
 
 ## 7. 作者与许可
 
@@ -266,6 +264,4 @@ Safety Horizon 按版本采用**双许可**：
 - **v0.3.0 及后续版本：**[非商业用途许可](LICENSE)免费允许仅为非商业目的复制、修改、分发和使用，包括不服务于商业目的的学习、研究、教学展示与个人项目。
 - **商业用途：**销售、营利性项目或服务、企业内部生产运营、为商业客户部署、集成或运行，均须另行签署[商业许可协议](COMMERCIAL_LICENSE.md#zh-cn)，即使不单独收取软件费用也不例外。联系：`__CONTACT_EMAIL__`。
 
-已经通过 MIT 授予的权利不撤销、不收回，包括后续版本沿用的 MIT 材料所具有的商用权利。第三方许可继续有效。非商业授权属于**源码开放，不是 OSI 认可的开源许可**，不能授权商业使用。软件按**现状**提供，在法律允许范围内排除保证与责任。本软件是辅助监测工具，**不替代机器联锁与物理安全防护**。完整条款见 [LICENSE](LICENSE)。
-
-历史 MIT 说明不向受 v0.3.0 起新许可约束的新增材料授予 MIT 权利。下架旧下载不撤销已授予的权利。
+第三方许可继续有效。非商业授权属于**源码开放，不是 OSI 认可的开源许可**，不能授权商业使用。软件按**现状**提供，在法律允许范围内排除保证与责任。本软件是辅助监测工具，**不替代机器联锁与物理安全防护**。完整条款见 [LICENSE](LICENSE)。

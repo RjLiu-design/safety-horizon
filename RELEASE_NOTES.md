@@ -28,7 +28,7 @@ Commercial contact remains the requested placeholder `__CONTACT_EMAIL__`; the au
 
 ### Earlier versions
 
-The v0.2.0-rc.1 and rc.2 Release pages and their attachments have been withdrawn at the author's request. Historical tags and commits remain. Existing MIT rights, including commercial rights in previously MIT-licensed material carried into later versions, are not revoked by withdrawing downloads or changing the license. Third-party licenses remain applicable.
+The v0.2.0-rc.1 and rc.2 Release records and their attachments have been withdrawn at the author's request. Historical tags and commits remain. See [LICENSE](LICENSE) for version-specific terms. Third-party licenses remain applicable.
 
 ### Verification and safety
 
@@ -66,7 +66,7 @@ Stop the old instance, keep existing data, extract the new package into a new fo
 
 ### 历史版本
 
-按作者要求下架 v0.2.0-rc.1、rc.2 的 Release 页面与附件，保留历史标签和提交。下架下载或修改许可不撤销既有 MIT 权利，包括后续版本沿用的 MIT 材料所具有的商用权利。第三方许可仍然有效。
+按作者要求下架 v0.2.0-rc.1、rc.2 的 Release 发布记录与附件，保留历史标签和提交。各版本适用条款见 [LICENSE](LICENSE)。第三方许可仍然有效。
 
 ### 验证与安全
 
