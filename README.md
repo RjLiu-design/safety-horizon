@@ -6,131 +6,80 @@
 
 ## English
 
-### About the project
+**Visual risk monitoring for cutting-table workstations.**
 
-**Video evidence → Risk analysis → Safety-officer review → Alerts and traceability**
+Designed by **Safety Horizon--Lrj**, Safety Horizon connects video evidence, pose analysis and human review in one traceable workflow. It runs in a local browser on macOS or Windows; TouchDesigner is optional.
 
-Designed by **Safety Horizon--Lrj**, Safety Horizon assists with visual risk monitoring at cutting-table workstations. It combines single-workstation pose analysis, event clips, frame-by-frame annotations, human risk ratings from 1 to 5, review-authorized buzzer alerts and threshold recommendations. Its standalone browser interface **does not require TouchDesigner**.
+**v0.3.0 · Pre-release · Non-commercial + commercial licensing**
 
-**v0.3.0 · Dual licensing · Pre-release**
+### What it does
 
-**v0.3.0 and later use dual licensing: free non-commercial use and separately agreed commercial use.** See [Author and license](#7-author-and-license).
+- **Observe:** capture an authorized video source and analyze workstation posture.
+- **Review:** replay event clips, step through frames and annotate actions.
+- **Decide:** let a safety officer assign a risk level from 1 to 5.
+- **Trace:** store review records and authorize alerts only after human review.
 
-### 1. Choose your platform
+### Explore the project
 
-Download one complete package from [Releases](https://github.com/RjLiu-design/safety-horizon/releases).
+| I want to… | Go to |
+|---|---|
+| Understand the design and scope | [Project statement](docs/10_PROJECT_STATEMENT.md#en) |
+| Follow the workflow | [Workflow and module guides](docs/README.md#en) |
+| Read or run the code | [Application](app/README.md#en) |
+| Install on my computer | [macOS guide](app/platforms/macos/README.md#en) · [Windows guide](app/platforms/windows/README.md#en) |
+| Check tests and limitations | [Validation](docs/08_VALIDATION.md#en) |
+| Find release notes and checksums | [Release files](release/README.md#en) |
 
-| Computer | Package suffix | Instructions |
-|---|---|---|
-| macOS · Apple Silicon (M-series) | `macOS-arm64.zip` | [macOS guide](platforms/macos/README.md#en) |
-| Windows 10/11 · x64 | `Windows-x64.zip` | [Windows guide](platforms/windows/README.md#en) |
+The root contains the project overview and licenses. Program files are in `app/`, guides in `docs/`, and package records in `release/`. No workflow modules have been removed.
 
-Extract the **whole package** and read `00_START_HERE.md`. Both packages include the shared source, with platform-specific launchers, dependency locks and capture methods. Intel Macs, Windows ARM and Linux are outside this release's verified scope.
+### Download and run
 
-### 2. Install
+Download the complete [macOS or Windows package](https://github.com/RjLiu-design/safety-horizon/releases/tag/v0.3.0), extract it and read `00_START_HERE.md`. The first installation downloads Python 3.12, locked dependencies and models.
 
-The first installation needs internet access to download Python 3.12, OpenCV, MediaPipe, other dependencies and models. PyCharm and cvzone are not required. Install and sign in to the EZVIZ client yourself when using window capture.
+**macOS · Apple Silicon**
 
-#### macOS
-
-Open Terminal in the extracted project root:
+From the extracted root:
 
 ```bash
+cd app
 bash platforms/macos/01_install.command
-# Window capture only: install Apple tools and grant screen-recording permission.
-xcode-select --install
-bash scripts/build_capture.sh
 bash platforms/macos/02_run.command
 ```
 
-Skip `xcode-select` if the tools are already installed. RTSP and local video do not require the window-capture helper or its build step.
+Window capture additionally needs Apple Command Line Tools, `bash scripts/build_capture.sh` and screen-recording permission. Follow the [macOS guide](app/platforms/macos/README.md#en) before using that input.
 
-#### Windows
+**Windows 10/11 · x64**
 
-Open PowerShell in the extracted project root:
+From the extracted root in PowerShell:
 
 ```powershell
+cd app
 powershell -NoProfile -ExecutionPolicy RemoteSigned -File platforms\windows\01_install.ps1
+.\platforms\windows\02_run.cmd
 ```
 
-Then double-click `platforms\windows\02_run.cmd`. The installer creates a project-local `.venv`; it does not replace system Python. If organizational policy blocks a script, follow the approved authorization process rather than disabling security protections.
+Choose a live window, authorized RTSP stream, local test video or review-only mode. Stop with **Ctrl+C in the launch terminal**. Closing the browser alone does not stop the service. See the [runbook](docs/02_RUNBOOK.md#en).
 
-#### Already have Python 3.12?
+Already have Python 3.12? Follow the manual environment setup in your platform guide. Dependencies live in `app/.venv`; system Python is not replaced. Intel Macs, Windows ARM and Linux are outside this release's verified scope.
 
-| Step | macOS | Windows |
-|---|---|---|
-| Create environment | `python3.12 -m venv .venv` | `py -3.12 -m venv .venv` |
-| Python path (P) | `.venv/bin/python` | `.venv\Scripts\python.exe` |
-| Lock file (L) | `requirements.lock` | `requirements-windows.lock` |
+### Safety and support
 
-Replace P and L below with the actual values for your platform:
+Alerts are off by default. Live events need human review at level 3–5 before authorizing a buzzer sequence. Tests, unreviewed events and levels 1–2 remain silent. Recalibrate after camera or source changes.
 
-```text
-P -m pip install --require-hashes -r L
-P -m pip check
-P scripts/setup_assets.py --download-models
-P horizon.py doctor
-P horizon.py configure
-```
+This is an auxiliary monitoring tool: **it does not replace machine interlocks or physical safety protection**. Software checks and the author's field report are described separately in [Validation](docs/08_VALIDATION.md#en).
 
-### 3. Select input and review events
+[Common problems](docs/06_TROUBLESHOOTING.md#en) · [Report an issue](https://github.com/RjLiu-design/safety-horizon/issues) · [Privacy](docs/05_PRIVACY_SECURITY.md#en)
 
-The startup menu offers **1 Window, 2 RTSP, 3 Local test video, 4 Review interface only**.
+### Author and license
 
-- **Window:** play the EZVIZ live stream first. On Windows, select the window and video region and keep it unobstructed. macOS uses its native capture helper.
-- **RTSP:** enter an authorized camera URL supported by your device. Input is hidden; private configuration is stored under the Git-excluded `src/runtime` directory.
-- **Local video:** place authorized footage in `src/test_videos` and enter its path. Test records are separate and cannot activate real alerts.
-- **Review:** select an event → replay/step through frames → annotate → assign level 1–5 → submit. Confirm success from the service acknowledgement.
+**Safety Horizon--Lrj** · Copyright © 2026
 
-Recalibrate the workstation region whenever the source or camera position changes; example settings are not site calibration. Press **Ctrl+C in the launch terminal** to stop. Closing the browser alone does not stop the backend.
+**v0.3.0 and later use dual licensing:**
 
-### 4. Alerts and safety boundaries
+- **Non-commercial:** copying, modification, distribution and use of covered material are free solely for non-commercial learning, research, teaching demonstrations and personal projects.
+- **Commercial:** sales, for-profit projects or services, internal enterprise production or operations, and deployment for commercial customers require a separately signed agreement, including when no separate software fee is charged.
 
-Alerts are off by default. After checking the devices, explicitly enable the required output:
-
-```text
-P horizon.py run --source-config src/runtime/source.private.json --alerts computer
-P horizon.py run --source-config src/runtime/source.private.json --alerts uno
-```
-
-For the default macOS window source, omit `--source-config`. Flash the UNO with `src/hardware/arduino_status_indicator/arduino_status_indicator.ino` first. A valid live event reviewed at level 3–5 can authorize one two-short/one-long sequence. Tests, unreviewed events and levels 1–2 remain silent.
-
-The author reports completing acceptance tests at the original site with physical hardware and reports **91%–100% accuracy**. This is not a guarantee across camera positions, platforms or the Windows port. Human review does not replace machine interlocks or protective measures. See the [project statement](docs/10_PROJECT_STATEMENT.md#en) and [validation record](docs/08_VALIDATION.md#en).
-
-### 5. Files and workflow
-
-| Location | Purpose |
-|---|---|
-| `platforms/macos` / `platforms/windows` | Platform-specific installation, launch, test scripts and guides |
-| `src` | Shared vision, review, storage, hardware and TD source |
-| `modules/01_capture` through `07_touchdesigner` | Seven workflow guides; no need to download seven copies |
-| `docs` | Interfaces, privacy, acceptance and release records |
-| `FILE_INDEX.md` / `SHA256SUMS` | File descriptions and integrity checks |
-
-See the [optional TD guide](docs/04_TOUCHDESIGNER.md#en). Windows uses the browser interface in this release; Windows TD project support is not claimed. Existing user TD projects are not replaced.
-
-### 6. FAQ
-
-**Black or stale video?** Check live playback, occlusion/minimization, crop bounds, permissions and RTSP connectivity. Unreliable input remains uncertain; skeletons are not fabricated.
-
-**Why Python 3.12?** Both dependency sets are locked for this version to avoid environment conflicts.
-
-**How do I test?** Run the platform's `03_test` script. It does not operate real hardware. Results are available in [Actions](https://github.com/RjLiu-design/safety-horizon/actions).
-
-**What must not be uploaded?** `src/runtime`, `src/annotations`, site footage, models, account configuration and `.venv`. Release packaging uses an explicit allowlist.
-
-**How can I use this project commercially?** Contact the author at `__CONTACT_EMAIL__` and sign a [commercial license agreement](COMMERCIAL_LICENSE.md#en) before commercially using material covered by the v0.3.0+ Non-Commercial License. See [LICENSE](LICENSE) for the full terms.
-
-### 7. Author and license
-
-**Safety Horizon--Lrj** · Copyright © 2026 · [Report an issue](https://github.com/RjLiu-design/safety-horizon/issues).
-
-Safety Horizon **v0.3.0 and later** use dual licensing:
-
-- **Non-commercial use:** the [Non-Commercial License](LICENSE) permits free copying, modification, distribution and use solely for non-commercial purposes, including learning, research, teaching demonstrations and personal projects.
-- **Commercial use:** sales, for-profit projects or services, internal enterprise production or operations, and deployment, integration or operation for commercial customers require a separately signed [commercial license agreement](COMMERCIAL_LICENSE.md#en), including where no separate software fee is charged. Contact: `__CONTACT_EMAIL__`.
-
-Third-party licenses remain applicable. The non-commercial route is **source-available, not OSI-approved open source**; it does not authorize commercial use. The software is provided **as is**, with warranties and liability excluded to the extent permitted by law. It is an auxiliary monitoring tool and **does not replace machine interlocks or physical safety protection**. See [LICENSE](LICENSE) for the full terms.
+Commercial contact: `__CONTACT_EMAIL__`. See [LICENSE](LICENSE) and [Commercial licensing](COMMERCIAL_LICENSE.md#en). Third-party licenses remain applicable. The non-commercial license is source-available, not OSI-approved open source. Software is provided **as is**, with warranties and liability excluded to the extent permitted by law.
 
 ---
 
@@ -138,126 +87,77 @@ Third-party licenses remain applicable. The non-commercial route is **source-ava
 
 ## 中文
 
-**视频证据 → 风险分析 → 安全员审核 → 提醒与追溯**
+**面向裁床作业的视觉风险辅助监测系统。**
 
-由 **Safety Horizon--Lrj** 设计的裁床作业视觉风险辅助监测系统。集成单工位姿态分析、事件录像、逐帧标注、1–5 级人工评定、审核后蜂鸣器提醒与阈值建议。独立浏览器界面运行，**不要求安装 TouchDesigner**。
+由 **Safety Horizon--Lrj** 设计，将视频证据、姿态分析和人工审核连接成可追溯的工作流。支持 macOS 和 Windows，在本地浏览器运行，TouchDesigner 为可选界面。
 
-**v0.3.0 · 双许可 · Pre-release（预发布）**
+**v0.3.0 · 预发布 · 非商业许可 + 商业授权**
 
-**v0.3.0 及后续版本采用双许可：非商业用途免费，商业用途另行签约。** 详见[作者与许可](#7-作者与许可)。
+### 核心功能
 
-## 1. 按系统下载 / Choose your platform
+- **观察：**采集授权视频，分析工位姿态。
+- **复核：**回放事件片段，逐帧查看并标注行为。
+- **判定：**由安全员选择 1–5 级风险等级。
+- **追溯：**保存审核记录，经人工审核后授权声音提醒。
 
-在 [Releases](https://github.com/RjLiu-design/safety-horizon/releases) 选择一个包：
+### 项目导航
 
-| 电脑 | 文件后缀 | 使用说明 |
-|---|---|---|
-| macOS · Apple Silicon（M 系列） | `macOS-arm64.zip` | [macOS 说明](platforms/macos/README.md) |
-| Windows 10/11 · x64 | `Windows-x64.zip` | [Windows 说明](platforms/windows/README.md) |
+| 你想了解 | 查看这里 |
+|---|---|
+| 设计思路与项目范围 | [项目说明](docs/10_PROJECT_STATEMENT.md#zh-cn) |
+| 各步骤如何衔接 | [工作流与模块文档](docs/README.md#zh-cn) |
+| 程序代码与启动入口 | [程序目录](app/README.md#zh-cn) |
+| 在自己的电脑上安装 | [macOS 说明](app/platforms/macos/README.md#zh-cn) · [Windows 说明](app/platforms/windows/README.md#zh-cn) |
+| 已完成哪些测试 | [验证记录](docs/08_VALIDATION.md#zh-cn) |
+| 版本内容与文件校验 | [发布资料](release/README.md#zh-cn) |
 
-解压**完整包**，先读 `00_START_HERE.md`。两包共享核心代码，各有平台入口、依赖锁和采集方式。Intel Mac、Windows ARM、Linux 不在本版验证范围。
+根目录只保留项目介绍和许可。程序放在 `app/`，说明放在 `docs/`，发布资料放在 `release/`，全部工作流模块均保留。
 
-## 2. 安装 / Install
+### 下载与运行
 
-首次联网下载 Python 3.12、OpenCV、MediaPipe 等依赖及模型；不需要 PyCharm/cvzone。萤石客户端和账号由用户自行安装、登录。
+下载完整的 [macOS 或 Windows 安装包](https://github.com/RjLiu-design/safety-horizon/releases/tag/v0.3.0)，解压后先读 `00_START_HERE.md`。首次安装需要联网下载 Python 3.12、锁定依赖及模型。
 
-### macOS
+**macOS · 苹果 M 系列**
 
 在解压根目录打开终端：
 
 ```bash
+cd app
 bash platforms/macos/01_install.command
-# 仅窗口采集需要 Apple 编译工具和录屏权限：
-xcode-select --install
-bash scripts/build_capture.sh
 bash platforms/macos/02_run.command
 ```
 
-已有编译工具可跳过 xcode-select；RTSP/本地视频不需要窗口助手。
+窗口采集另需 Apple Command Line Tools、`bash scripts/build_capture.sh` 及录屏权限。使用该输入前请按 [macOS 说明](app/platforms/macos/README.md#zh-cn) 完成准备。
 
-### Windows
+**Windows 10/11 · x64**
 
 在解压根目录打开 PowerShell：
 
 ```powershell
+cd app
 powershell -NoProfile -ExecutionPolicy RemoteSigned -File platforms\windows\01_install.ps1
+.\platforms\windows\02_run.cmd
 ```
 
-安装后双击 `platforms\windows\02_run.cmd`。脚本只建立项目 `.venv`，不替换系统 Python。公司策略阻止时走正规授权流程，不关闭安全保护。
+启动后选择实时窗口、授权 RTSP、本地测试视频或仅审核界面。退出时在启动终端按 **Ctrl+C**；只关闭浏览器不会停止服务。详见[运行说明](docs/02_RUNBOOK.md#zh-cn)。
 
-### 已有 Python 3.12
+已有 Python 3.12 可按对应平台文档手动安装。依赖环境保存在 `app/.venv`，不替换系统 Python。Intel Mac、Windows ARM 和 Linux 不在本版验证范围内。
 
-| 操作 | macOS | Windows |
-|---|---|---|
-| 创建环境 | `python3.12 -m venv .venv` | `py -3.12 -m venv .venv` |
-| Python 路径（P） | `.venv/bin/python` | `.venv\Scripts\python.exe` |
-| 锁文件（L） | `requirements.lock` | `requirements-windows.lock` |
+### 安全与支持
 
-用对应实际路径替换 P、L：
+默认关闭声音提醒。实时事件须经人工评为 3–5 级，才授权一次蜂鸣器提醒；测试、未审核及 1–2 级保持静音。更换来源或机位后需要重新标定。
 
-```text
-P -m pip install --require-hashes -r L
-P -m pip check
-P scripts/setup_assets.py --download-models
-P horizon.py doctor
-P horizon.py configure
-```
+本项目是辅助监测工具，**不替代机器联锁与物理安全防护**。软件测试与作者现场报告分别列于[验证记录](docs/08_VALIDATION.md#zh-cn)。
 
-## 3. 输入与审核 / Run
+[常见问题](docs/06_TROUBLESHOOTING.md#zh-cn) · [问题反馈](https://github.com/RjLiu-design/safety-horizon/issues) · [隐私说明](docs/05_PRIVACY_SECURITY.md#zh-cn)
 
-启动后选择 **1 窗口、2 RTSP、3 本地视频、4 仅审核界面**。
+### 作者与许可
 
-- **窗口**：先播放萤石直播。Windows 选择窗口和视频区域，必须保持无遮挡；macOS 沿用原生窗口采集。
-- **RTSP**：输入自己有权访问的摄像头地址；需设备支持。密码输入隐藏，私有配置保存在不入库的 `src/runtime`。
-- **本地视频**：放入 `src/test_videos` 后输入文件路径；测试单独统计，不驱动真实提醒。
-- **审核**：选择事件 → 回放/逐帧 → 标注 → 1–5 级评定 → 提交，以服务回执为准。
+**Safety Horizon--Lrj** · Copyright © 2026
 
-更换来源/机位后须重新标定工位范围，示例配置不自动适用新现场。退出在启动终端按 **Ctrl+C**；关闭浏览器不等于退出后端。
+**v0.3.0 及后续版本采用双许可：**
 
-## 4. 提醒与安全边界
+- **非商业用途：**仅为非商业学习、研究、教学展示及个人项目，可以免费复制、修改、分发和使用受许可材料。
+- **商业用途：**销售、营利性项目或服务、企业内部生产运营、为商业客户部署，均须另行签署协议，即使不单独收取软件费用也不例外。
 
-默认静音。实际提醒需显式启用，例如：
-
-```text
-P horizon.py run --source-config src/runtime/source.private.json --alerts computer
-P horizon.py run --source-config src/runtime/source.private.json --alerts uno
-```
-
-macOS 默认窗口输入可省略 source-config。UNO 先烧录 `src/hardware/arduino_status_indicator/arduino_status_indicator.ino`。有效实时事件经人工 3–5 级审核，才授权一次两短一长；测试、未审核及 1–2 级不响。
-
-作者确认完成其现场及真实硬件验收测试，报告准确率 **91%–100%**；不是所有机位、平台及本次 Windows 适配的准确率保证。人工复核不替代机器联锁与安全防护。见 [测试说明](docs/10_PROJECT_STATEMENT.md)、[验证记录](docs/08_VALIDATION.md)。
-
-## 5. 文件导航
-
-| 目录 | 用途 |
-|---|---|
-| `platforms/macos` / `platforms/windows` | 两平台安装、启动、测试和说明 |
-| `src` | 共用视觉、审核、存储、硬件及 TD 源码 |
-| `modules/01_capture` 至 `07_touchdesigner` | 七步工作流说明，不必重复下载七份代码 |
-| `docs` | 接口、隐私、验收和发布记录 |
-| `FILE_INDEX.md` / `SHA256SUMS` | 文件用途与校验清单 |
-
-可选 TD 节点图见 [TD 说明](docs/04_TOUCHDESIGNER.md)。Windows 本版使用浏览器，不宣称 Windows TD 工程已适配。原用户 TD 工程不会被替换。
-
-## 6. 常见问题
-
-**黑屏？** 检查实时播放、遮挡/最小化、裁切范围、权限或 RTSP 连通性。无可靠输入时保持不确定，不伪造骨架。
-
-**为何 Python 3.12？** 两平台依赖按此版本锁定，避免与其他环境冲突。
-
-**怎样测试？** 运行对应平台的 `03_test` 文件；不操作真实硬件。自动测试见 [Actions](https://github.com/RjLiu-design/safety-horizon/actions)。
-
-**什么不能上传？** `src/runtime`、`src/annotations`、现场录像、模型、账号配置和 `.venv`。发布使用白名单打包脚本。
-
-**我想商用这个项目怎么办？** 请通过 `__CONTACT_EMAIL__` 联系作者，在商业使用 v0.3.0 起受非商业许可约束的材料前签署[商业许可协议](COMMERCIAL_LICENSE.md#zh-cn)。完整条款见 [LICENSE](LICENSE)。
-
-## 7. 作者与许可
-
-**Safety Horizon--Lrj** · Copyright © 2026 · [问题反馈](https://github.com/RjLiu-design/safety-horizon/issues)。
-
-Safety Horizon **v0.3.0 及后续版本**采用双许可：
-
-- **非商业用途：**[非商业用途许可](LICENSE)免费允许仅为非商业目的复制、修改、分发和使用，包括学习、研究、教学展示与个人项目。
-- **商业用途：**销售、营利性项目或服务、企业内部生产运营、为商业客户部署、集成或运行，均须另行签署[商业许可协议](COMMERCIAL_LICENSE.md#zh-cn)，即使不单独收取软件费用也不例外。联系：`__CONTACT_EMAIL__`。
-
-第三方许可继续有效。非商业授权属于**源码开放，不是 OSI 认可的开源许可**，不能授权商业使用。软件按**现状**提供，在法律允许范围内排除保证与责任。本软件是辅助监测工具，**不替代机器联锁与物理安全防护**。完整条款见 [LICENSE](LICENSE)。
+商业联系：`__CONTACT_EMAIL__`。完整条款见 [LICENSE](LICENSE) 和[商业许可说明](COMMERCIAL_LICENSE.md#zh-cn)。第三方许可继续有效。非商业许可属于源码开放，不是 OSI 认可的开源许可。软件按**现状**提供，在法律允许范围内排除保证与责任。

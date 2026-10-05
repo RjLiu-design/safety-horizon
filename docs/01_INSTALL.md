@@ -10,10 +10,10 @@
 
 | System | Package | Detailed instructions |
 |---|---|---|
-| macOS Apple Silicon | `macOS-arm64.zip` | [macOS](../platforms/macos/README.md#en) |
-| Windows 10/11 x64 | `Windows-x64.zip` | [Windows](../platforms/windows/README.md#en) |
+| macOS Apple Silicon | `macOS-arm64.zip` | [macOS](../app/platforms/macos/README.md#en) |
+| Windows 10/11 x64 | `Windows-x64.zip` | [Windows](../app/platforms/windows/README.md#en) |
 
-Extract the entire package and run commands from its root; do not move individual scripts out of the package. Python 3.12, OpenCV, MediaPipe, NumPy and pySerial are installed in the project's `.venv`. Windows additionally uses pywin32 and mss. Each platform has its own hash-locked dependency file.
+Extract the entire package. From the extracted `SafetyHorizon/` root, run `cd app` first; run installation and application commands inside `app/`. Do not move individual scripts out of the package. Python 3.12, OpenCV, MediaPipe, NumPy and pySerial are installed in `app/.venv`. Windows additionally uses pywin32 and mss. Each platform has its own hash-locked dependency file inside `app/`.
 
 The first installation downloads models and verifies SHA-256 hashes. Window capture requires the EZVIZ client; RTSP and local video do not. TouchDesigner is optional; PyCharm and cvzone are not required. Arduino tools are needed only to flash a board.
 
@@ -27,10 +27,10 @@ The installer does not modify system Python, purchase licenses, supply accounts 
 
 | 系统 | 下载包 | 详细步骤 |
 |---|---|---|
-| macOS Apple Silicon | `macOS-arm64.zip` | [macOS](../platforms/macos/README.md) |
-| Windows 10/11 x64 | `Windows-x64.zip` | [Windows](../platforms/windows/README.md) |
+| macOS Apple Silicon | `macOS-arm64.zip` | [macOS](../app/platforms/macos/README.md#zh-cn) |
+| Windows 10/11 x64 | `Windows-x64.zip` | [Windows](../app/platforms/windows/README.md#zh-cn) |
 
-解压完整包，在根目录运行，不要搬走单个脚本。Python 3.12、OpenCV、MediaPipe、NumPy、pySerial 安装到项目 `.venv`；Windows 另装 pywin32、mss；分别使用带哈希锁文件。
+解压完整包，先从 `SafetyHorizon/` 解压根目录执行 `cd app`，安装与运行命令均在 `app/` 内执行，不要搬走单个脚本。Python 3.12、OpenCV、MediaPipe、NumPy、pySerial 安装到 `app/.venv`；Windows 另装 pywin32、mss；两平台分别使用 `app/` 内的带哈希锁文件。
 
 首次联网下载模型并核验 SHA-256。窗口采集需要萤石客户端；RTSP/本地视频不需要。TD 可选，PyCharm/cvzone 非必需；Arduino 工具仅烧录板卡时需要。
 

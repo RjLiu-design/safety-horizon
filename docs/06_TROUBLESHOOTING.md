@@ -6,6 +6,8 @@
 
 ## English
 
+**Working directory:** from the extracted `SafetyHorizon/` folder, run `cd app` first. Unless a step explicitly enters `src`, commands and source paths below are relative to `app/`, not this documentation folder.
+
 ### Troubleshooting checklist
 
 | Symptom | Check in this order |
@@ -32,6 +34,8 @@ Start diagnosis with `horizon.py doctor` and `horizon.py test` using your platfo
 <a id="zh-cn"></a>
 
 ## 中文
+
+**工作目录：**先从解压后的 `SafetyHorizon/` 根目录执行 `cd app`。除步骤明确要求进入 `src` 外，下文命令与源码路径均以 `app/` 为基准，不在本说明所在目录执行。
 
 | 现象 | 检查顺序 |
 |---|---|

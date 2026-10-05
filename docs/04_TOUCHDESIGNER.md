@@ -6,6 +6,8 @@
 
 ## English
 
+**Working directory:** first run `cd app` from the extracted `SafetyHorizon/` root. Commands and relative program paths below use `app/`; the Textport example uses an absolute path.
+
 ### Optional interface
 
 The standalone application does not require TD. The package retains workflow-builder and runtime source without deleting or rewriting existing formal projects. Original `.toe` binaries containing site caches are excluded from public downloads.
@@ -14,14 +16,14 @@ These optional build steps target **macOS**. On Windows use `platforms/windows/0
 
 ### Build in a NEW project
 
-1. Complete installation from the package root so `.venv`, models and any required live-capture helper are ready.
+1. Complete installation inside `app/` so `.venv`, models and any required live-capture helper are ready.
 2. Stop the standalone browser application to avoid concurrent submissions.
 3. Create a blank TD project. Do not run the builder inside an existing formal project. It refuses to destroy existing `safety_td` or `safety_window` nodes.
 4. Open Textport and replace the path below with your extracted location:
 
 ```python
 from pathlib import Path
-p = Path('/absolute/path/SafetyHorizon/src/touchdesigner/build_touchdesigner_project.py')
+p = Path('/absolute/path/SafetyHorizon/app/src/touchdesigner/build_touchdesigner_project.py')
 exec(compile(p.read_text(encoding='utf-8'), str(p), 'exec'), dict(globals(), __file__=str(p)))
 ```
 
@@ -45,20 +47,22 @@ Some generated nodes store build-time paths. After moving the package, recreate 
 
 ## 中文
 
+**工作目录：**先从 `SafetyHorizon/` 解压根目录执行 `cd app`。下文命令及程序相对路径均以 `app/` 为基准；Textport 示例使用绝对路径。
+
 独立版不需要 TD。本目录保留原工作流构建与运行源码，**不会删除或改写你已有的正式工程**。出于现场缓存隐私，未将原 `.toe` 二进制放入公开包。
 
 以下可选构建步骤面向 **macOS**。Windows 请使用 `platforms/windows/02_run.cmd` 的独立浏览器界面；本版不声称 Windows TD 启动与保存链路已适配。
 
 ## Build in a NEW project / 在全新工程生成
 
-1. 完成根目录安装，使 `.venv`、模型和实时采集器准备好。
+1. 在 `app/` 内完成安装，使 `.venv`、模型和实时采集器准备好。
 2. 停止独立浏览器版，避免两套 UI 并行提交。
 3. 在 TD 新建一个空白工程，不能打开旧正式工程运行构建脚本。脚本发现已有 `safety_td` / `safety_window` 会拒绝，不销毁它们。
 4. 打开 Textport，将下面的路径替换成自己解压的位置：
 
 ```python
 from pathlib import Path
-p = Path('/absolute/path/SafetyHorizon/src/touchdesigner/build_touchdesigner_project.py')
+p = Path('/absolute/path/SafetyHorizon/app/src/touchdesigner/build_touchdesigner_project.py')
 exec(compile(p.read_text(encoding='utf-8'), str(p), 'exec'), dict(globals(), __file__=str(p)))
 ```
 

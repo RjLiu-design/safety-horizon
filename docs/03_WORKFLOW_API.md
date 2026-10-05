@@ -25,7 +25,7 @@
 | 06 Alerts | `indicator_bridge.py`, `computer_buzzer_simulator.py` | Only `runtime/review-actuator.json` → one alert sequence |
 | 07 TD | `build_touchdesigner_project.py`, `td_runtime.py` | The same file contracts → node interface |
 
-Runtime paths in this table are relative to `src`. The existing internal ID `upper_station` is retained; the interface calls it the left workstation. Database IDs are not renamed.
+The application directory is `app/`; from the extracted root, run `cd app` before using application commands. Runtime file paths in this table are relative to `app/src/`, while `web_portal.py` is under `app/`. The existing internal ID `upper_station` is retained; the interface calls it the left workstation. Database IDs are not renamed.
 
 ### Command acknowledgement
 
@@ -66,7 +66,7 @@ Feedback currently proposes score thresholds from human-reviewed records; it doe
 | 06 提醒 | `indicator_bridge.py`, `computer_buzzer_simulator.py` | **仅** `runtime/review-actuator.json` → 单次提醒 |
 | 07 TD | `build_touchdesigner_project.py`, `td_runtime.py` | 同样的文件契约 → 节点界面 |
 
-所有 `src/` 下的相对路径以 `src` 为项目根。此处采用既有 `upper_station` 内部 ID，界面显示左侧工位，不更改数据库 ID。
+程序目录为 `app/`；从解压根目录先执行 `cd app` 再运行程序命令。表内运行数据路径以 `app/src/` 为基准，`web_portal.py` 则位于 `app/`。此处采用既有 `upper_station` 内部 ID，界面显示左侧工位，不更改数据库 ID。
 
 ## Command handshake / 命令回执
 

@@ -6,10 +6,12 @@
 
 ## English
 
+**Working directory:** from the extracted `SafetyHorizon/` folder, run `cd app` first. Unless a step explicitly enters `src`, commands and source paths below are relative to `app/`, not this documentation folder.
+
 ### Operating sequence
 
 1. Run only one instance. Do not let the original project and release package capture the same window simultaneously.
-2. Complete [macOS](../platforms/macos/README.md#en) or [Windows](../platforms/windows/README.md#en) installation and environment checks. Only macOS window capture requires helper compilation and screen-recording permission.
+2. Complete [macOS](../app/platforms/macos/README.md#en) or [Windows](../app/platforms/windows/README.md#en) installation and environment checks. Only macOS window capture requires helper compilation and screen-recording permission.
 3. Start EZVIZ live playback for window input, or verify an authorized RTSP address. Check date/time, camera position, the left workstation, crop bounds and occlusion. Do not label recorded playback as live.
 4. Start the platform's `02_run` launcher and select an input. Keep the first run silent and do not connect machine-control equipment.
 5. Check fresh video, pose results and pending events in the browser. Low-confidence or stale input requires on-site confirmation.
@@ -39,8 +41,10 @@ The target is 3 seconds before and 5 seconds after an event, not a guarantee for
 
 ## 中文
 
+**工作目录：**先从解压后的 `SafetyHorizon/` 根目录执行 `cd app`。除步骤明确要求进入 `src` 外，下文命令与源码路径均以 `app/` 为基准，不在本说明所在目录执行。
+
 1. 确认只运行一个实例；避免旧项目和发布包同时采同一个窗口。
-2. 按 [macOS](../platforms/macos/README.md) 或 [Windows](../platforms/windows/README.md) 完成安装与环境检查。仅 macOS 窗口采集需要编译助手和录屏授权。
+2. 按 [macOS](../app/platforms/macos/README.md#zh-cn) 或 [Windows](../app/platforms/windows/README.md#zh-cn) 完成安装与环境检查。仅 macOS 窗口采集需要编译助手和录屏授权。
 3. 窗口输入先打开萤石直播；RTSP 确認授权地址可用。确认日期时间、机位、目标左侧工位、裁切及遮挡，不把录像回放标为实时。
 4. 启动对应平台的 `02_run`，按菜单选择输入。第一次保持默认静音，不接机器控制装置。
 5. 查看浏览器中的新鲜视频、姿态与待审核队列；低置信或源过期要现场确认。

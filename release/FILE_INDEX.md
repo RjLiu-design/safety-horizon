@@ -1,0 +1,172 @@
+# File Index / 逐文件索引
+
+Paths are relative to the repository/archive root. See docs/modules for numbered workflow guides; Python import modules retain their original names.
+
+路径相对于仓库/解压根目录。编号模块导航见 docs/modules；不更名原 Python 导入模块。
+
+| File / 文件 | Purpose / 用途 |
+|---|---|
+| `.github/workflows/tests.yml` | Cross-platform CI / 两平台自动化验证 |
+| `.gitignore` | Release source or metadata / 发布源码与元数据 |
+| `COMMERCIAL_LICENSE.md` | Commercial licensing process and agreement outline / 商业授权流程与协议条款骨架 |
+| `LICENSE` | v0.3.0+ non-commercial terms and safety disclaimer / v0.3.0 起的非商业条款与安全免责声明 |
+| `README.md` | Release source or metadata / 发布源码与元数据 |
+| `app/.python-version` | Release source or metadata / 发布源码与元数据 |
+| `app/01_install_macos.command` | Release source or metadata / 发布源码与元数据 |
+| `app/02_run_standalone.command` | Release source or metadata / 发布源码与元数据 |
+| `app/03_test.command` | Release source or metadata / 发布源码与元数据 |
+| `app/README.md` | Release source or metadata / 发布源码与元数据 |
+| `app/VERSION` | Release source or metadata / 发布源码与元数据 |
+| `app/horizon.py` | Safety Horizon entry point / 独立于 TouchDesigner 的统一入口。 |
+| `app/platforms/macos/01_install.command` | macOS install/run/test guide / 苹果电脑入口 |
+| `app/platforms/macos/02_run.command` | macOS install/run/test guide / 苹果电脑入口 |
+| `app/platforms/macos/03_test.command` | macOS install/run/test guide / 苹果电脑入口 |
+| `app/platforms/macos/README.md` | macOS install/run/test guide / 苹果电脑入口 |
+| `app/platforms/windows/01_install.ps1` | Windows install/run/test guide / Windows 电脑入口 |
+| `app/platforms/windows/02_run.cmd` | Windows install/run/test guide / Windows 电脑入口 |
+| `app/platforms/windows/03_test.cmd` | Windows install/run/test guide / Windows 电脑入口 |
+| `app/platforms/windows/README.md` | Windows install/run/test guide / Windows 电脑入口 |
+| `app/release_tests/test_distribution_layout.py` | Archive layout and private-data exclusion / 发布目录与私有数据隔离回归。 |
+| `app/release_tests/test_platforms.py` | Cross-platform checks / 平台互斥、采集路由、退出与隔离测试。 |
+| `app/release_tests/test_portal.py` | Release-only integration tests / 发布接口回归；仅临时模拟数据，不触发硬件。 |
+| `app/requirements-windows.lock` | Release source or metadata / 发布源码与元数据 |
+| `app/requirements.in` | Release source or metadata / 发布源码与元数据 |
+| `app/requirements.lock` | Release source or metadata / 发布源码与元数据 |
+| `app/scripts/build_capture.sh` | Release source or metadata / 发布源码与元数据 |
+| `app/scripts/check_docs.py` | Check bilingual coverage, navigation and local links / 检查双语正文、导航和文档链接。 |
+| `app/scripts/package_release.py` | Allowlisted source packaging / 白名单打包，不打包现场数据或环境。 |
+| `app/scripts/setup_assets.py` | Download official models with digest checks / 官方模型下载与完整性校验。 |
+| `app/scripts/smoke_models.py` | Actual model inference on synthetic blank input / 真实加载模型，不使用员工素材。 |
+| `app/scripts/smoke_video.py` | Actual model + local-video pipeline with synthetic non-person frames. — Release source or metadata / 发布源码与元数据 |
+| `app/scripts/verify_distribution.py` | Verify both platform ZIPs and run regression from the current-platform extracted copy. — Release source or metadata / 发布源码与元数据 |
+| `app/src/annotate.py` | Minimal keyboard video annotation tool for six research labels. — Release source or metadata / 发布源码与元数据 |
+| `app/src/app.py` | Run the joint hand, upper-body and machine-motion offline prototype. — Release source or metadata / 发布源码与元数据 |
+| `app/src/assets/sounds/01-yellow-attention-2s-68bpm.wav` | Generated diagnostic sound; not default alert / 生成的旧诊断音效 |
+| `app/src/assets/sounds/02-orange-warning-4p5s-112bpm.wav` | Generated diagnostic sound; not default alert / 生成的旧诊断音效 |
+| `app/src/assets/sounds/03-red-danger-9s-176bpm.wav` | Generated diagnostic sound; not default alert / 生成的旧诊断音效 |
+| `app/src/assets/sounds/04-purple-grey-system-unavailable.wav` | Generated diagnostic sound; not default alert / 生成的旧诊断音效 |
+| `app/src/calibrate.py` | Click warning, danger, machine-motion and reference polygons. — Release source or metadata / 发布源码与元数据 |
+| `app/src/calibrate_fixed_camera.py` | Capture a privacy-minimized, people-free reference for a fixed camera. — Release source or metadata / 发布源码与元数据 |
+| `app/src/calibrate_wide_layout.py` | Select one independent rectangular processing crop per wide-camera workstation. — Release source or metadata / 发布源码与元数据 |
+| `app/src/camera_probe.py` | List local camera indices that can return a frame without saving images. — Release source or metadata / 发布源码与元数据 |
+| `app/src/computer_buzzer_simulator.py` | Simulate the reviewed Arduino UNO buzzer on this Mac. — Release source or metadata / 发布源码与元数据 |
+| `app/src/config/ezviz-fatigue-multistation.json` | Example / research configuration; recalibrate / 示例配置需现场标定 |
+| `app/src/config/ezviz-fatigue-single-upper.json` | Example / research configuration; recalibrate / 示例配置需现场标定 |
+| `app/src/config/machine-state.example.json` | Example / research configuration; recalibrate / 示例配置需现场标定 |
+| `app/src/config/station.example.json` | Example / research configuration; recalibrate / 示例配置需现场标定 |
+| `app/src/config/video-21.fixed-8p5.json` | Example / research configuration; recalibrate / 示例配置需现场标定 |
+| `app/src/config/video-21.offline.json` | Example / research configuration; recalibrate / 示例配置需现场标定 |
+| `app/src/config/video32-lower.example.json` | Example / research configuration; recalibrate / 示例配置需现场标定 |
+| `app/src/config/video32-upper.example.json` | Example / research configuration; recalibrate / 示例配置需现场标定 |
+| `app/src/config/video32-wide.example.json` | Example / research configuration; recalibrate / 示例配置需现场标定 |
+| `app/src/evaluate_offline.py` | Summarize one labeled offline run without claiming industrial accuracy. — Release source or metadata / 发布源码与元数据 |
+| `app/src/ezviz_monitor.py` | Friendly secure launcher for an EZVIZ/Hikvision NVR live channel. — Release source or metadata / 发布源码与元数据 |
+| `app/src/ezviz_multistation_fatigue_monitor.py` | Two independent whole-person fatigue observers from one visible EZVIZ window. — Release source or metadata / 发布源码与元数据 |
+| `app/src/ezviz_window_monitor.py` | Launch the configured whole-person fatigue observer on the EZVIZ window. — Release source or metadata / 发布源码与元数据 |
+| `app/src/factory_preflight.py` | Read-only deployment preflight. Never captures video or activates a buzzer. — Release source or metadata / 发布源码与元数据 |
+| `app/src/fatigue_window_monitor.py` | Observe whole-person fatigue-risk cues in an already-visible EZVIZ window. — Release source or metadata / 发布源码与元数据 |
+| `app/src/generate_alert_sounds.py` | Generate one heartbeat-like risk family at three tempos and durations. — Release source or metadata / 发布源码与元数据 |
+| `app/src/hardware/arduino_buzzer_basic_test/arduino_buzzer_basic_test.ino` | Arduino firmware / 板卡固件 |
+| `app/src/hardware/arduino_status_indicator/arduino_status_indicator.ino` | Arduino firmware / 板卡固件 |
+| `app/src/indicator_bridge.py` | Forward *review-authorized* advisory commands to an output-only Arduino. — Release source or metadata / 发布源码与元数据 |
+| `app/src/live_multicam.py` | Run the recommended fixed two-camera hand/pose/machine fusion prototype. — Release source or metadata / 发布源码与元数据 |
+| `app/src/macos_window_capture/EZVIZWindowCapture.swift` | Native macOS capture helper source / 原生采集源码 |
+| `app/src/macos_window_capture/EZVIZWindowCaptureCG.c` | Native macOS capture helper source / 原生采集源码 |
+| `app/src/macos_window_capture/ezviz_window_list.c` | Native macOS capture helper source / 原生采集源码 |
+| `app/src/macos_window_capture/list_window_frames.swift` | Native macOS capture helper source / 原生采集源码 |
+| `app/src/models/README.md` | Release source or metadata / 发布源码与元数据 |
+| `app/src/owned_worker.py` | Wait for job ownership before running a child / 确认进程归属后启动服务。 |
+| `app/src/safety_monitor/__init__.py` | Core package for the non-invasive cutting-station safety prototype. — Shared vision/review library / 共享视觉审核库 |
+| `app/src/safety_monitor/audio_alerts.py` | Two-family audio feedback for the debounced joint safety state. — Shared vision/review library / 共享视觉审核库 |
+| `app/src/safety_monitor/camera_device.py` | OpenCV camera device with bounded reconnect and health metadata. — Shared vision/review library / 共享视觉审核库 |
+| `app/src/safety_monitor/capture_manager.py` | Opt-in, face-blurred snapshots and short event clips for the live monitor. — Shared vision/review library / 共享视觉审核库 |
+| `app/src/safety_monitor/config.py` | Configuration loading and validation for one monitored workstation. — Shared vision/review library / 共享视觉审核库 |
+| `app/src/safety_monitor/event_store.py` | Anonymous, metadata-only event log with local retention enforcement. — Shared vision/review library / 共享视觉审核库 |
+| `app/src/safety_monitor/fatigue_engine.py` | Anonymous, temporal whole-person fatigue-risk proxy. — Shared vision/review library / 共享视觉审核库 |
+| `app/src/safety_monitor/fatigue_status.py` | Atomic, image-free status output for the fatigue-risk monitor. — Shared vision/review library / 共享视觉审核库 |
+| `app/src/safety_monitor/fatigue_visualization.py` | Readable overlay for anonymous whole-person fatigue-risk observation. — Shared vision/review library / 共享视觉审核库 |
+| `app/src/safety_monitor/feature_store.py` | Frame-level anonymous feature export for labeling and lightweight baselines. — Shared vision/review library / 共享视觉审核库 |
+| `app/src/safety_monitor/fixed_camera_guard.py` | Detect camera displacement against a people-free fixed-station reference. — Shared vision/review library / 共享视觉审核库 |
+| `app/src/safety_monitor/frame_activity.py` | Conservative evidence of unchanged pixels, not proof of camera liveness. — Shared vision/review library / 共享视觉审核库 |
+| `app/src/safety_monitor/geometry.py` | Small, dependency-free geometry helpers using normalized image coordinates. — Shared vision/review library / 共享视觉审核库 |
+| `app/src/safety_monitor/hand_tracker.py` | MediaPipe Tasks hand-landmark adapter for OpenCV BGR frames. — Shared vision/review library / 共享视觉审核库 |
+| `app/src/safety_monitor/input_router.py` | Hot-switch between the live EZVIZ window and labelled local test clips. — Shared vision/review library / 共享视觉审核库 |
+| `app/src/safety_monitor/joint_engine.py` | Continuous hand, upper-body and machine-state fusion for the research MVP. — Shared vision/review library / 共享视觉审核库 |
+| `app/src/safety_monitor/joint_visualization.py` | Overlay for the joint hand-pose-machine research prototype. — Shared vision/review library / 共享视觉审核库 |
+| `app/src/safety_monitor/live_sources.py` | Explicit live-source selection / 明确选择窗口或 RTSP，不猜测输入。 |
+| `app/src/safety_monitor/machine_motion.py` | Experimental optical-flow estimate for a calibrated machine motion ROI. — Shared vision/review library / 共享视觉审核库 |
+| `app/src/safety_monitor/machine_truth.py` | Read-only machine-state evidence and conservative visual/truth fusion. — Shared vision/review library / 共享视觉审核库 |
+| `app/src/safety_monitor/platform_runtime.py` | Cross-platform file locks and owned child processes / 跨平台互斥与进程回收。 |
+| `app/src/safety_monitor/pose_tracker.py` | MediaPipe Pose Landmarker adapter and upper-body feature extraction. — Shared vision/review library / 共享视觉审核库 |
+| `app/src/safety_monitor/pre_event_buffer.py` | Bounded, non-blocking pre/post-event review video buffer. — Shared vision/review library / 共享视觉审核库 |
+| `app/src/safety_monitor/privacy.py` | Privacy transformations for derived demonstration outputs. — Shared vision/review library / 共享视觉审核库 |
+| `app/src/safety_monitor/review_contract.py` | Validated data contracts for the safety-officer review workflow. — Shared vision/review library / 共享视觉审核库 |
+| `app/src/safety_monitor/review_controller.py` | Application-facing API for the safety-officer review gate. — Shared vision/review library / 共享视觉审核库 |
+| `app/src/safety_monitor/review_store.py` | Crash-resistant local queue and annotation storage for safety review. — Shared vision/review library / 共享视觉审核库 |
+| `app/src/safety_monitor/risk_engine.py` | Temporal hand-to-hazard risk estimation with debounce and hysteresis. — Shared vision/review library / 共享视觉审核库 |
+| `app/src/safety_monitor/serial_connection.py` | Bounded, nonblocking-retry serial output; never guesses among devices. — Shared vision/review library / 共享视觉审核库 |
+| `app/src/safety_monitor/status_output.py` | Privacy-minimized live status snapshot for isolated display peripherals. — Shared vision/review library / 共享视觉审核库 |
+| `app/src/safety_monitor/threshold_optimizer.py` | Conservative, review-driven risk-score threshold recommendations. — Shared vision/review library / 共享视觉审核库 |
+| `app/src/safety_monitor/visualization.py` | OpenCV overlay for risk zones, detected landmarks, and advisory status. — Shared vision/review library / 共享视觉审核库 |
+| `app/src/safety_monitor/wide_station.py` | Validated single-wide-camera layout for independent workstation pipelines. — Shared vision/review library / 共享视觉审核库 |
+| `app/src/safety_monitor/window_capture_device.py` | Read a named macOS app window through native streaming or composited capture. — Shared vision/review library / 共享视觉审核库 |
+| `app/src/safety_monitor/windows_capture.py` | Windows visible-window ROI capture / 仅采集用户选定窗口的视频区域。 |
+| `app/src/safety_officer_review.py` | Safety-officer review sidecar for the TouchDesigner workflow. — Release source or metadata / 发布源码与元数据 |
+| `app/src/simulate.py` | Generate a four-state proof image without a camera or personal data. — Release source or metadata / 发布源码与元数据 |
+| `app/src/sound_check.py` | Explicitly audition one or all alert cues before a monitored session. — Release source or metadata / 发布源码与元数据 |
+| `app/src/start_touchdesigner_engine.command` | Release source or metadata / 发布源码与元数据 |
+| `app/src/stream_probe.py` | Probe a live network stream without saving frames or printing credentials. — Release source or metadata / 发布源码与元数据 |
+| `app/src/supervise_service.py` | Own one worker, restart exited workers with bounded backoff, expose health. — Release source or metadata / 发布源码与元数据 |
+| `app/src/test_videos/README.md` | Release source or metadata / 发布源码与元数据 |
+| `app/src/tests/test_audio_alerts.py` | Core regression / 核心模块测试 |
+| `app/src/tests/test_camera_device.py` | Core regression / 核心模块测试 |
+| `app/src/tests/test_capture_manager.py` | Core regression / 核心模块测试 |
+| `app/src/tests/test_event_store.py` | Core regression / 核心模块测试 |
+| `app/src/tests/test_fatigue_engine.py` | Core regression / 核心模块测试 |
+| `app/src/tests/test_fixed_camera_guard.py` | Core regression / 核心模块测试 |
+| `app/src/tests/test_geometry.py` | Core regression / 核心模块测试 |
+| `app/src/tests/test_joint_engine.py` | Core regression / 核心模块测试 |
+| `app/src/tests/test_lightweight_bridge.py` | Core regression / 核心模块测试 |
+| `app/src/tests/test_machine_motion.py` | Core regression / 核心模块测试 |
+| `app/src/tests/test_machine_truth.py` | Core regression / 核心模块测试 |
+| `app/src/tests/test_multistation_fatigue.py` | Core regression / 核心模块测试 |
+| `app/src/tests/test_pose_features.py` | Core regression / 核心模块测试 |
+| `app/src/tests/test_pre_event_buffer.py` | Core regression / 核心模块测试 |
+| `app/src/tests/test_recovery.py` | Core regression / 核心模块测试 |
+| `app/src/tests/test_release_safety.py` | Release regressions: no physical outputs, all evidence in temporary dirs. — Core regression / 核心模块测试 |
+| `app/src/tests/test_review_workflow.py` | Core regression / 核心模块测试 |
+| `app/src/tests/test_risk_engine.py` | Core regression / 核心模块测试 |
+| `app/src/tests/test_serial_connection.py` | Core regression / 核心模块测试 |
+| `app/src/tests/test_status_output.py` | Core regression / 核心模块测试 |
+| `app/src/tests/test_wide_station.py` | Core regression / 核心模块测试 |
+| `app/src/tests/test_window_capture_device.py` | Core regression / 核心模块测试 |
+| `app/src/touchdesigner/build_touchdesigner_project.py` | Create the 萤石安全视界 TouchDesigner版 .toe project. |
+| `app/src/touchdesigner/td_runtime.py` | Runtime functions invoked by the TouchDesigner Execute DAT. — Release source or metadata / 发布源码与元数据 |
+| `app/src/wide_multistation.py` | Run independent safety pipelines for several crops from one fixed wide camera. — Release source or metadata / 发布源码与元数据 |
+| `app/ui/app.js` | Standalone local review interface / 独立本地审核界面 |
+| `app/ui/index.html` | Standalone local review interface / 独立本地审核界面 |
+| `app/ui/style.css` | Standalone local review interface / 独立本地审核界面 |
+| `app/web_portal.py` | Loopback-only review UI; shared review service remains the sole actuator gate. — Release source or metadata / 发布源码与元数据 |
+| `docs/01_INSTALL.md` | Numbered deployment documentation / 部署文档 |
+| `docs/02_RUNBOOK.md` | Numbered deployment documentation / 部署文档 |
+| `docs/03_WORKFLOW_API.md` | Numbered deployment documentation / 部署文档 |
+| `docs/04_TOUCHDESIGNER.md` | Numbered deployment documentation / 部署文档 |
+| `docs/05_PRIVACY_SECURITY.md` | Numbered deployment documentation / 部署文档 |
+| `docs/06_TROUBLESHOOTING.md` | Numbered deployment documentation / 部署文档 |
+| `docs/07_FACTORY_ACCEPTANCE.md` | Numbered deployment documentation / 部署文档 |
+| `docs/08_VALIDATION.md` | Numbered deployment documentation / 部署文档 |
+| `docs/09_GITHUB_RELEASE.md` | Numbered deployment documentation / 部署文档 |
+| `docs/10_PROJECT_STATEMENT.md` | Numbered deployment documentation / 部署文档 |
+| `docs/11_LICENSE_GUIDE.md` | Numbered deployment documentation / 部署文档 |
+| `docs/README.md` | Numbered deployment documentation / 部署文档 |
+| `docs/modules/01_capture/README.md` | Numbered module guide / 编号模块说明 |
+| `docs/modules/02_pose_risk/README.md` | Numbered module guide / 编号模块说明 |
+| `docs/modules/03_review/README.md` | Numbered module guide / 编号模块说明 |
+| `docs/modules/04_storage/README.md` | Numbered module guide / 编号模块说明 |
+| `docs/modules/05_feedback/README.md` | Numbered module guide / 编号模块说明 |
+| `docs/modules/06_actuation/README.md` | Numbered module guide / 编号模块说明 |
+| `docs/modules/07_touchdesigner/README.md` | Numbered module guide / 编号模块说明 |
+| `release/README.md` | Release notices and provenance / 发布说明与来源记录 |
+| `release/RELEASE_NOTES.md` | Release notices and provenance / 发布说明与来源记录 |
+| `release/SOURCE_PROVENANCE.json` | Release notices and provenance / 发布说明与来源记录 |
+| `release/THIRD_PARTY_NOTICES.md` | Release notices and provenance / 发布说明与来源记录 |
